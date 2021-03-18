@@ -1,0 +1,13 @@
+body {
+  /*字体族*/
+  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  /*字体颜色*/
+  color: #333;
+  /*最小宽度, 设置后浏览器视口缩小到min-width以下, 页面元素位置不会改变*/
+  min-width: 1226px;
+}
+a {
+  color: antiquewhite;
+  width: 20px;
+}
+/*# sourceMappingURL=index.css.map */
