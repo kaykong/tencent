@@ -192,5 +192,53 @@ body {
       }
     }
   }
+
+
+  .top-header {
+    width: 100%;
+    height: 100px;
+    background-color: #9a6e3a;
+
+    .container {
+      width: 1226px;
+      height: 100px;
+      margin: 0 auto;
+      background-color: #55a532;
+
+      /*&:hover {
+        .header-menu {
+          height: 200px;
+        }
+      }*/
+
+      .header-logo {
+        float: left;
+        width: 55px;
+        height: 55px;
+        margin-top: 22.5px;
+        background-color: #0086b3;
+      }
+    }
+
+    .header-menu {
+      width: 100%;
+      height: 0px;
+      overflow: hidden;
+      background-color: #fff;
+      //display: none;
+      transition: all .5s;
+      //transition: height 2s;
+    }
+
+
+    .container:hover+.header-menu {
+      /*.container hover的时候, 控制它的弟弟元素且class为.header-menu*/
+      //box-sizing: border-box;
+      //border: 20px solid coral;
+      height: 200px;
+      //display: block;
+
+    }
+  }
 }
 
