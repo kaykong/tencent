@@ -3,11 +3,135 @@ body {
   font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
   /*字体颜色*/
   color: #333;
-  /*最小宽度, 设置后浏览器视口缩小到min-width以下, 页面元素位置不会改变*/
+  /*最小宽度, 设置后浏览器视口缩小到min-width以下, body宽度仍为min-width*/
   min-width: 1226px;
+  height: 1500px;
+  background-color: #bfa;
 }
-a {
-  color: antiquewhite;
-  width: 20px;
+.header .top-bar {
+  height: 40px;
+  background-color: #333;
+}
+.header .top-bar .container {
+  width: 1226px;
+  margin: 0 auto;
+  color: #b0b0b0;
+  font-size: 12px;
+  line-height: 40px;
+}
+.header .top-bar .container a {
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  /* inline-block 让鼠标划入块中就相当于划入a标签*/
+  display: inline-block;
+  color: #b0b0b0;
+  text-decoration: none;
+}
+.header .top-bar .container a:hover {
+  color: #fff;
+}
+.header .top-bar .container .line {
+  /* .3em = 0.3*(font-size: 12px)=3.6px */
+  margin: 0 0.3em;
+  color: #424242;
+}
+.header .top-bar .container .top-bar-nav {
+  /*float: left;*/
+  /*background-color: aquamarine;*/
+  font-size: 12px;
+  float: left;
+}
+.header .top-bar .container .top-bar-nav a {
+  line-height: 40px;
+  display: inline-block;
+  color: #b0b0b0;
+  text-decoration: none;
+}
+.header .top-bar .container .top-bar-nav a:hover {
+  color: #fff;
+}
+.header .top-bar .container .top-bar-nav .line {
+  /* .3em = 0.3*(font-size: 12px)=3.6px */
+  margin: 0 0.3em;
+  color: #424242;
+}
+.header .top-bar .container .top-bar-nav .downloadApp {
+  position: relative;
+}
+.header .top-bar .container .top-bar-nav .downloadApp .triangle {
+  width: 0;
+  height: 0;
+  border: 8px solid #fff;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  top: 24px;
+  left: 14px;
+  display: none;
+  z-index: 9999;
+}
+.header .top-bar .container .top-bar-nav .downloadApp .qrCode {
+  width: 124px;
+  height: 0px;
+  display: inline-block;
+  background-color: #fff;
+  position: absolute;
+  top: 40px;
+  left: -40px;
+  box-sizing: border-box;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  /* transition: 用于为样式设置过渡效果 */
+  transition: all 0.3s;
+}
+.header .top-bar .container .top-bar-nav .downloadApp:hover .qrCode {
+  height: 148px;
+}
+.header .top-bar .container .top-bar-nav .downloadApp:hover .triangle {
+  display: block;
+}
+.header .top-bar .container .top-bar-userInfo {
+  float: right;
+  margin-right: 25px;
+}
+.header .top-bar .container .top-bar-shopCar {
+  width: 120px;
+  height: 40px;
+  float: right;
+  background-color: #424242;
+  box-sizing: border-box;
+  position: relative;
+}
+.header .top-bar .container .top-bar-shopCar a {
+  height: 40px;
+  width: 120px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.header .top-bar .container .top-bar-shopCar .icon-gouwuchekong {
+  font-size: 15px;
+}
+.header .top-bar .container .top-bar-shopCar:hover a {
+  color: #ff6700;
+  background-color: #fff;
+}
+.header .top-bar .container .top-bar-shopCar .top-bar-shopCar-menu {
+  width: 316px;
+  height: 0px;
+  box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+  right: 195px;
+  top: -1.5px;
+  display: block;
+  transition: height 0.3s;
+}
+.header .top-bar .container .top-bar-shopCar:hover .top-bar-shopCar-menu {
+  height: 100px;
+}
+.zheng {
+  width: 100px;
+  height: 100px;
+  background-color: #9a6e3a;
 }
 /*# sourceMappingURL=index.css.map */
