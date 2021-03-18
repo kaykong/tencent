@@ -23,8 +23,8 @@ body {
       line-height: 40px;
 
       a {
-        height: 40px;
-        line-height: 40px;
+        //height: 40px;
+        //line-height: 40px;
         font-size: 12px;
         /* inline-block 让鼠标划入块中就相当于划入a标签*/
         display: inline-block;
@@ -85,14 +85,15 @@ body {
 
           .qrCode {
             width: 124px;
-            height: 0px;
-            display: inline-block;
+            height: 0;
+            //display: inline-block;
+            overflow: hidden;
             background-color: #fff;
             position: absolute;
             top: 40px;
             left: -40px;
             //left: -40px;
-            box-sizing: border-box;
+            //box-sizing: border-box;
             //border: 1px solid crimson;
             z-index: 999;
             //display: none;
@@ -100,13 +101,35 @@ body {
             box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 
             /* transition: 用于为样式设置过渡效果 */
-            transition: all .3s;
+            transition: height .3s;
+
+            img {
+              width: 90px;
+              //height: 90px;
+              margin: 17px;
+              margin-bottom: 10px;
+            }
+
+            span {
+              color: #424242;
+              font-size: 14px;
+              line-height: 1;
+              margin-left: 19px;
+              //margin: 0 auto;
+            }
           }
         }
 
         .downloadApp:hover .qrCode {
-          //display: block;
           height: 148px;
+
+          img {
+            display: block;
+          }
+
+          span {
+            display: block;
+          }
         }
 
         .downloadApp:hover .triangle {
@@ -145,32 +168,29 @@ body {
 
 
         .top-bar-shopCar-menu {
-          position: relative;
-          //top: 10px;
           width: 316px;
-          height: 0px;
-          box-sizing: border-box;
+          height: 0;
           background-color: #fff;
+          box-sizing: border-box;
           position: relative;
           right: 195px;
           top: -1.5px;
           display: block;
+          overflow: hidden;
           transition: height .3s;
+          text-align: center;
+
+          .empty-msg {
+            color: #333;
+            line-height: 100px;
+          }
         }
 
         &:hover .top-bar-shopCar-menu {
-          //display: block;
           height: 100px;
         }
       }
     }
   }
-}
-
-
-.zheng {
-  width: 100px;
-  height: 100px;
-  background-color: #9a6e3a;
 }
 
