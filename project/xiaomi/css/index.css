@@ -152,24 +152,12 @@ body {
 .header .top-header {
   width: 100%;
   height: 100px;
-  /*.container:hover+.header-nav-menu {
-      !*.container hover的时候, 控制它的弟弟元素且class为.header-menu*!
-      //box-sizing: border-box;
-      //border: 20px solid coral;
-      height: 200px;
-      //display: block;
-
-    }*/
+  position: relative;
 }
 .header .top-header .container {
   width: 1226px;
   height: 100px;
   margin: 0 auto;
-  /*&:hover {
-        .header-menu {
-          height: 200px;
-        }
-      }*/
 }
 .header .top-header .container .header-logo {
   float: left;
@@ -224,9 +212,37 @@ body {
 .header .top-header .container .header-nav ul li a:hover {
   color: #ff6700;
 }
+.header .top-header .container .header-nav ul .Js-header-nav-li:hover ~ .header-nav-menu {
+  height: 200px;
+  border-top: 1px solid #E0E0E0;
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+.header .top-header .container .header-nav ul .header-nav-menu {
+  width: 100%;
+  height: 0;
+  /*设置透明的1px,防止隐藏式内部抖动*/
+  border-top: 1px solid transparent;
+  overflow: hidden;
+  background-color: #fff;
+  /*
+            给父级元素top-header(宽度满屏) 相对定位
+            开启自身绝对定位
+            则自身宽度可以继承自top-header, 达到满屏效果
+            */
+  position: absolute;
+  top: 100px;
+  left: 0;
+  transition: all 0.5s;
+}
+.header .top-header .container .header-nav ul .header-nav-menu:hover {
+  height: 200px;
+  border-top: 1px solid #E0E0E0;
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
+}
 .header .top-header .container .header-nav ul .all-goods {
   margin-left: 52px;
   margin-right: 5px;
+  visibility: hidden;
 }
 .header .top-header .container .header-search {
   float: right;
@@ -234,13 +250,6 @@ body {
   margin-top: 25px;
   height: 49px;
   transition: border 0.3s;
-  /*&:hover {
-          border-color: #b0b0b0;
-
-          .search-btn {
-            border-left-color: #b0b0b0;
-          }
-        }*/
 }
 .header .top-header .container .header-search input.search-txt {
   box-sizing: border-box;
@@ -252,9 +261,6 @@ body {
   border: 1px solid #e0e0e0;
   border-right: none;
   transition: border 0.3s;
-  /*&:focus {
-            border: 1px solid red;
-          }*/
 }
 .header .top-header .container .header-search input.search-txt:hover {
   border-color: #b0b0b0;
@@ -291,20 +297,5 @@ body {
   color: #616161;
   line-height: 50px;
   padding-left: 15px;
-  /*
-            width: 40px;
-            height: 50px;
-            display: block;*/
-}
-.header .top-header .header-nav-menu {
-  width: 100%;
-  height: 0px;
-  overflow: hidden;
-  background-color: #fff;
-  transition: all 0.5s;
-}
-.header .top-header .header-nav-menu:hover {
-  /*border-top: 1px solid rgb(224, 224, 224);
-        box-shadow: 0 5px 3px rgba(0, 0, 0, .2);*/
 }
 /*# sourceMappingURL=index.css.map */

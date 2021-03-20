@@ -198,19 +198,12 @@ body {
   .top-header {
     width: 100%;
     height: 100px;
-    //background-color: #9a6e3a;
+    position: relative;
 
     .container {
       width: 1226px;
       height: 100px;
       margin: 0 auto;
-      //background-color: #55a532;
-
-      /*&:hover {
-        .header-menu {
-          height: 200px;
-        }
-      }*/
 
       .header-logo {
         float: left;
@@ -232,8 +225,6 @@ body {
           background-position: center;
           //vertical-align: center;
           transition: left .2s;
-
-
         }
 
         .mi-logo {
@@ -284,10 +275,44 @@ body {
 
           }
 
+          .Js-header-nav-li {
+            &:hover {
+              &~.header-nav-menu {
+                height: 200px;
+                border-top: 1px solid #E0E0E0;
+                box-shadow: 0 5px 2px rgba(0, 0, 0, .1);
+              }
+            }
+          }
+
+          .header-nav-menu {
+            width: 100%;
+            height: 0;
+            /*设置透明的1px,防止隐藏式内部抖动*/
+            border-top: 1px solid transparent;
+            overflow: hidden;
+            background-color: #fff;
+            /*
+            给父级元素top-header(宽度满屏) 相对定位
+            开启自身绝对定位
+            则自身宽度可以继承自top-header, 达到满屏效果
+            */
+            position: absolute;
+            top: 100px;
+            left: 0;
+            transition: all .5s;
+
+            &:hover {
+              height: 200px;
+              border-top: 1px solid #E0E0E0;
+              box-shadow: 0 5px 2px rgba(0, 0, 0, .1);
+            }
+          }
+
           .all-goods {
             margin-left: 52px;
             margin-right: 5px;
-            //padding-right: 15px;
+            visibility: hidden;
           }
         }
       }
@@ -297,7 +322,6 @@ body {
         width: 296px;
         margin-top: 25px;
         height: 49px;
-        //background-color: #0086b3;
 
         transition: border .3s;
 
@@ -311,9 +335,6 @@ body {
           border: 1px solid #e0e0e0;
           border-right: none;
           transition: border .3s;
-          /*&:focus {
-            border: 1px solid red;
-          }*/
 
           &:hover {
             border-color: #b0b0b0;
@@ -358,56 +379,14 @@ body {
             color: rgb(97,97,97);
             line-height: 50px;
             padding-left: 15px;
-            /*
-            width: 40px;
-            height: 50px;
-            display: block;*/
           }
         }
 
-        /*&:hover {
-          border-color: #b0b0b0;
-
-          .search-btn {
-            border-left-color: #b0b0b0;
-          }
-        }*/
-
-
       }
 
     }
 
-    .header-nav-menu {
-      width: 100%;
-      height: 0px;
-      overflow: hidden;
-      background-color: #fff;
-      //display: none;
-      transition: all .5s;
-      //transition: height 2s;
-      //border-top: 1px solid rgb(224, 224, 224);
 
-
-      &:hover {
-        //box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-        //border-top: 1px solid #b0b0b0;
-        //height: 200px;
-
-        /*border-top: 1px solid rgb(224, 224, 224);
-        box-shadow: 0 5px 3px rgba(0, 0, 0, .2);*/
-      }
-    }
-
-
-    /*.container:hover+.header-nav-menu {
-      !*.container hover的时候, 控制它的弟弟元素且class为.header-menu*!
-      //box-sizing: border-box;
-      //border: 20px solid coral;
-      height: 200px;
-      //display: block;
-
-    }*/
   }
 }
 
