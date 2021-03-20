@@ -6,7 +6,7 @@ body {
   /*最小宽度, 设置后浏览器视口缩小到min-width以下, body宽度仍为min-width*/
   min-width: 1226px;
   height: 1500px;
-  background-color: #bfa;
+  background-color: #fff;
 }
 
 .header {
@@ -180,6 +180,7 @@ body {
           transition: height .3s;
           text-align: center;
 
+
           .empty-msg {
             color: #333;
             line-height: 100px;
@@ -203,7 +204,7 @@ body {
       width: 1226px;
       height: 100px;
       margin: 0 auto;
-      background-color: #55a532;
+      //background-color: #55a532;
 
       /*&:hover {
         .header-menu {
@@ -279,8 +280,8 @@ body {
               &:hover {
                 color: #ff6700;
               }
-
             }
+
           }
 
           .all-goods {
@@ -295,14 +296,40 @@ body {
         float: right;
         width: 296px;
         margin-top: 25px;
-        height: 50px;
-        background-color: #0086b3;
+        height: 49px;
+        //background-color: #0086b3;
 
-        .search-txt {
+        transition: border .3s;
+
+        input.search-txt {
           box-sizing: border-box;
           width: 245px;
           height: 50px;
+          padding: 0 10px;
           float: left;
+          outline: none;
+          border: 1px solid #e0e0e0;
+          border-right: none;
+          transition: border .3s;
+          /*&:focus {
+            border: 1px solid red;
+          }*/
+
+          &:hover {
+            border-color: #b0b0b0;
+
+            &+.search-btn {
+              border-color: #b0b0b0;
+            }
+          }
+
+          &:focus {
+            border-color: #ff6700;
+
+            &+.search-btn {
+              border-color: #ff6700;
+            }
+          }
         }
 
         .search-btn {
@@ -310,8 +337,43 @@ body {
           height: 50px;
           float: left;
           box-sizing: border-box;
-          background-color: #795da3;
+          border: 1px solid #e0e0e0;
+          transition: border,background-color .3s;
+          //background-color: #795da3;
+
+          &:hover {
+            background-color: #ff6700;
+            border-color: transparent;
+
+            span {
+              color: #fff;
+            }
+          }
+
+          span {
+            width: 51px;
+            height: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(97,97,97);
+            line-height: 50px;
+            padding-left: 15px;
+            /*
+            width: 40px;
+            height: 50px;
+            display: block;*/
+          }
         }
+
+        /*&:hover {
+          border-color: #b0b0b0;
+
+          .search-btn {
+            border-left-color: #b0b0b0;
+          }
+        }*/
+
+
       }
 
     }
@@ -324,21 +386,28 @@ body {
       //display: none;
       transition: all .5s;
       //transition: height 2s;
+      //border-top: 1px solid rgb(224, 224, 224);
+
 
       &:hover {
-        height: 200px;
+        //box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        //border-top: 1px solid #b0b0b0;
+        //height: 200px;
+
+        /*border-top: 1px solid rgb(224, 224, 224);
+        box-shadow: 0 5px 3px rgba(0, 0, 0, .2);*/
       }
     }
 
 
-    .container:hover+.header-nav-menu {
-      /*.container hover的时候, 控制它的弟弟元素且class为.header-menu*/
+    /*.container:hover+.header-nav-menu {
+      !*.container hover的时候, 控制它的弟弟元素且class为.header-menu*!
       //box-sizing: border-box;
       //border: 20px solid coral;
       height: 200px;
       //display: block;
 
-    }
+    }*/
   }
 }
 
