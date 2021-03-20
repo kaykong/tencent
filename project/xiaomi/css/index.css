@@ -152,7 +152,6 @@ body {
 .header .top-header {
   width: 100%;
   height: 100px;
-  background-color: #9a6e3a;
 }
 .header .top-header .container {
   width: 1226px;
@@ -170,16 +169,89 @@ body {
   width: 55px;
   height: 55px;
   margin-top: 22.5px;
+  background-color: #ff6700;
+  position: relative;
+  overflow: hidden;
+}
+.header .top-header .container .header-logo a {
+  /*让文字向左缩进*/
+  text-indent: -99999px;
+  width: 55px;
+  height: 55px;
+  /*绝对定位会改变元素的性质，行内变成块，块的宽高被内容撑开*/
+  position: absolute;
+  background-position: center;
+  transition: left 0.2s;
+}
+.header .top-header .container .header-logo .mi-logo {
+  left: 0px;
+  background-image: url("../img/mi-logo.png");
+}
+.header .top-header .container .header-logo .mi-home {
+  left: -55px;
+  background-image: url("../img/mi-home.png");
+}
+.header .top-header .container .header-logo:hover .mi-logo {
+  left: 55px;
+}
+.header .top-header .container .header-logo:hover .mi-home {
+  left: 0px;
+}
+.header .top-header .container .header-nav {
+  width: 850px;
+  height: 100px;
+  background-color: #fff;
+  margin-left: 6px;
+  float: left;
+}
+.header .top-header .container .header-nav ul li {
+  float: left;
+  font-size: 16px;
+  line-height: 100px;
+}
+.header .top-header .container .header-nav ul li a {
+  color: #333;
+  padding: 0 10px;
+  text-decoration: none;
+}
+.header .top-header .container .header-nav ul li a:hover {
+  color: #ff6700;
+}
+.header .top-header .container .header-nav ul .all-goods {
+  margin-left: 52px;
+  margin-right: 5px;
+}
+.header .top-header .container .header-search {
+  float: right;
+  width: 296px;
+  margin-top: 25px;
+  height: 50px;
   background-color: #0086b3;
 }
-.header .top-header .header-menu {
+.header .top-header .container .header-search .search-txt {
+  box-sizing: border-box;
+  width: 245px;
+  height: 50px;
+  float: left;
+}
+.header .top-header .container .header-search .search-btn {
+  width: 51px;
+  height: 50px;
+  float: left;
+  box-sizing: border-box;
+  background-color: #795da3;
+}
+.header .top-header .header-nav-menu {
   width: 100%;
   height: 0px;
   overflow: hidden;
   background-color: #fff;
   transition: all 0.5s;
 }
-.header .top-header .container:hover + .header-menu {
+.header .top-header .header-nav-menu:hover {
+  height: 200px;
+}
+.header .top-header .container:hover + .header-nav-menu {
   /*.container hover的时候, 控制它的弟弟元素且class为.header-menu*/
   height: 200px;
 }
