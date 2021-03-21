@@ -216,7 +216,6 @@ body {
   color: #ff6700;
 }
 .header .top-header .container .header-nav ul .Js-header-nav-li:hover ~ .header-nav-menu {
-  border-top: 1px solid #e0e0e0;
   height: 200px;
   box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
 }
@@ -225,7 +224,6 @@ body {
   height: 0;
   box-sizing: border-box;
   border-top: none;
-  /*设置透明的1px,防止隐藏式内部抖动*/
   overflow: hidden;
   background-color: #fff;
   /*
@@ -239,9 +237,16 @@ body {
   transition: 0.3s;
   z-index: 999;
 }
+.header .top-header .container .header-nav ul .header-nav-menu .sep {
+  /*
+              如果没有sep, 那么需要在header-nav-menu中添加border-top
+              但是 header-nav-menu transition height为0时, border-top首先隐藏, 内容区出现抖动
+              */
+  /*分割线, 防止header-nav-menu height为0时, 内容区出现抖动*/
+  border-top: 1px solid #e0e0e0;
+}
 .header .top-header .container .header-nav ul .header-nav-menu:hover {
   height: 200px;
-  border-top: 1px solid #E0E0E0;
   box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
 }
 .header .top-header .container .header-nav ul .all-goods {
