@@ -181,7 +181,7 @@ body {
           overflow: hidden;
           transition: height .3s;
           text-align: center;
-          z-index: 999;
+          z-index: 99999;
           box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
 
           .empty-msg {
@@ -265,6 +265,7 @@ body {
             float: left;
             font-size: 16px;
             line-height: 100px;
+            height: 100px;
 
             a {
               color: #333;
@@ -280,9 +281,10 @@ body {
 
           .Js-header-nav-li {
             &:hover {
-              &~.header-nav-menu {
+              & ~ .header-nav-menu {
+                border-top: 1px solid #e0e0e0;
                 height: 200px;
-                border-top: 1px solid #E0E0E0;
+                //border-top: 1px solid #E0E0E0;
                 box-shadow: 0 5px 2px rgba(0, 0, 0, .1);
               }
             }
@@ -291,8 +293,10 @@ body {
           .header-nav-menu {
             width: 100%;
             height: 0;
+            box-sizing: border-box;
+            border-top: none;
             /*设置透明的1px,防止隐藏式内部抖动*/
-            border-top: 1px solid transparent;
+            //border-top: 1px solid #e0e0e0;
             overflow: hidden;
             background-color: #fff;
             /*
@@ -301,9 +305,11 @@ body {
             则自身宽度可以继承自top-header, 达到满屏效果
             */
             position: absolute;
-            top: 100px;
+            top: 99px;
             left: 0;
-            transition: all .5s;
+            transition:  .3s;
+            z-index: 999;
+            //display: none;
 
             &:hover {
               height: 200px;
@@ -317,6 +323,7 @@ body {
             margin-right: 5px;
             //visibility: hidden;
             position: relative;
+
             a:hover {
               color: #333;
             }
@@ -329,12 +336,15 @@ body {
               //border: 1px solid crimson;
               top: 100px;
               left: -113px;
-              background-color: #969B9D;
+              //background-color: #969B9D;
               //box-sizing: border-box;
-              border: none;
+              background: rgba(105, 101, 101, .6);
+              //border: none;
+              z-index: 99;
 
               li {
                 width: 100%;
+                height: 42px;
                 //border: 1px solid crimson;
                 //display: block;
 
@@ -357,6 +367,7 @@ body {
                   .icon-tubiaozhizuo-:before {
                     font-size: 14px;
                     float: right;
+                    color: #E0E0E0;
                   }
 
                 }
@@ -389,7 +400,7 @@ body {
           &:hover {
             border-color: #b0b0b0;
 
-            &+.search-btn {
+            & + .search-btn {
               border-color: #b0b0b0;
             }
           }
@@ -397,11 +408,11 @@ body {
           &:focus {
             border-color: @themeColor;
 
-            &~.search-btn {
+            & ~ .search-btn {
               border-color: @themeColor;
             }
 
-            &~.search-key-words {
+            & ~ .search-key-words {
               height: 180px;
               border: 1px solid @themeColor;
               border-top: none;
@@ -415,7 +426,7 @@ body {
           float: left;
           box-sizing: border-box;
           border: 1px solid #e0e0e0;
-          transition: border,background-color .3s;
+          transition: border, background-color .3s;
           //background-color: #795da3;
 
           &:hover {
@@ -432,7 +443,7 @@ body {
             height: 50px;
             font-size: 18px;
             font-weight: bold;
-            color: rgb(97,97,97);
+            color: rgb(97, 97, 97);
             line-height: 50px;
             padding-left: 15px;
           }
@@ -449,7 +460,8 @@ body {
           height: 0;
 
           overflow: hidden;
-          z-index: 99;
+          background-color: #fff;
+          z-index: 999;
 
           li {
             height: 30px;
@@ -457,6 +469,7 @@ body {
             &:hover {
               background-color: #FAFAFA;
             }
+
             a {
               width: 100%;
               line-height: 30px;
@@ -474,7 +487,73 @@ body {
   }
 }
 
+.main {
+
+  .container {
+    width: 1226px;
+    height: 460px;
+    margin: 0 auto;
+    position: relative;
+
+    img {
+      display: block;
+      width: 1226px;
+      height: 460px;
+      margin: 0 auto;
+      position: absolute;
+      /*初始化时完全透明*/
+      opacity: 0;
+      /*过渡2s 图片由完全透明--> 不透明*/
+      transition: 2s;
+    }
+
+    .imgOn {
+      /*图片不透明*/
+      opacity: 1;
+    }
+
+
+    .cycle-list {
+      position: absolute;
+      //top: 590px;
+      //right: 163px;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+
+      a {
+        width: 10px;
+        height: 10px;
+        box-sizing: border-box;
+        border-radius: 50%;
+        background-clip: content-box;
+
+        float: left;
+        margin: 0 4px;
+        cursor: pointer;
+        border: 2px solid hsla(0, 0%, 100%, .3);
+        background: rgba(0,0,0,.4);
+        transition: all .2s;
+
+        &:hover {
+          background: hsla(0,0%,100%,.4);
+          border-color: rgba(0,0,0,.4);
+        }
+      }
+
+      .main-active {
+        background: hsla(0,0%,100%,.4);
+        border-color: rgba(0,0,0,.4);
+      }
+
+    }
+  }
+}
+
 .height0 {
   height: 0;
 }
+
+
+
 

@@ -141,7 +141,7 @@ body {
   overflow: hidden;
   transition: height 0.3s;
   text-align: center;
-  z-index: 999;
+  z-index: 99999;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 .header .top-bar .container .top-bar-shopCar .top-bar-shopCar-menu .empty-msg {
@@ -205,6 +205,7 @@ body {
   float: left;
   font-size: 16px;
   line-height: 100px;
+  height: 100px;
 }
 .header .top-header .container .header-nav ul li a {
   color: #333;
@@ -215,15 +216,16 @@ body {
   color: #ff6700;
 }
 .header .top-header .container .header-nav ul .Js-header-nav-li:hover ~ .header-nav-menu {
+  border-top: 1px solid #e0e0e0;
   height: 200px;
-  border-top: 1px solid #E0E0E0;
   box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
 }
 .header .top-header .container .header-nav ul .header-nav-menu {
   width: 100%;
   height: 0;
+  box-sizing: border-box;
+  border-top: none;
   /*设置透明的1px,防止隐藏式内部抖动*/
-  border-top: 1px solid transparent;
   overflow: hidden;
   background-color: #fff;
   /*
@@ -232,9 +234,10 @@ body {
             则自身宽度可以继承自top-header, 达到满屏效果
             */
   position: absolute;
-  top: 100px;
+  top: 99px;
   left: 0;
-  transition: all 0.5s;
+  transition: 0.3s;
+  z-index: 999;
 }
 .header .top-header .container .header-nav ul .header-nav-menu:hover {
   height: 200px;
@@ -256,11 +259,12 @@ body {
   position: absolute;
   top: 100px;
   left: -113px;
-  background-color: #969B9D;
-  border: none;
+  background: rgba(105, 101, 101, 0.6);
+  z-index: 99;
 }
 .header .top-header .container .header-nav ul .all-goods .categoryList li {
   width: 100%;
+  height: 42px;
 }
 .header .top-header .container .header-nav ul .all-goods .categoryList li a {
   display: block;
@@ -277,6 +281,7 @@ body {
 .header .top-header .container .header-nav ul .all-goods .categoryList li a .icon-tubiaozhizuo-:before {
   font-size: 14px;
   float: right;
+  color: #E0E0E0;
 }
 .header .top-header .container .header-search {
   float: right;
@@ -345,7 +350,8 @@ body {
   top: 75px;
   height: 0;
   overflow: hidden;
-  z-index: 99;
+  background-color: #fff;
+  z-index: 999;
 }
 .header .top-header .container .header-search .search-key-words li {
   height: 30px;
@@ -361,6 +367,54 @@ body {
   font-size: 12px;
   color: #424242;
   display: block;
+}
+.main .container {
+  width: 1226px;
+  height: 460px;
+  margin: 0 auto;
+  position: relative;
+}
+.main .container img {
+  display: block;
+  width: 1226px;
+  height: 460px;
+  margin: 0 auto;
+  position: absolute;
+  /*初始化时完全透明*/
+  opacity: 0;
+  /*过渡2s 图片由完全透明--> 不透明*/
+  transition: 2s;
+}
+.main .container .imgOn {
+  /*图片不透明*/
+  opacity: 1;
+}
+.main .container .cycle-list {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+}
+.main .container .cycle-list a {
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-clip: content-box;
+  float: left;
+  margin: 0 4px;
+  cursor: pointer;
+  border: 2px solid hsla(0, 0%, 100%, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+}
+.main .container .cycle-list a:hover {
+  background: hsla(0, 0%, 100%, 0.4);
+  border-color: rgba(0, 0, 0, 0.4);
+}
+.main .container .cycle-list .main-active {
+  background: hsla(0, 0%, 100%, 0.4);
+  border-color: rgba(0, 0, 0, 0.4);
 }
 .height0 {
   height: 0;
