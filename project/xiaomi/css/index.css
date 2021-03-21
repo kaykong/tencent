@@ -237,12 +237,14 @@ body {
   transition: 0.3s;
   z-index: 999;
 }
-.header .top-header .container .header-nav ul .header-nav-menu .sep {
+.header .top-header .container .header-nav ul .header-nav-menu::before {
+  content: '';
+  display: block;
   /*
-              如果没有sep, 那么需要在header-nav-menu中添加border-top
-              但是 header-nav-menu transition height为0时, border-top首先隐藏, 内容区出现抖动
-              */
-  /*分割线, 防止header-nav-menu height为0时, 内容区出现抖动*/
+               如果没有.header-nav-menu::before , 那么需要在header-nav-menu中添加border-top
+               但是 当header-nav-menu transition height为0时, border-top首先隐藏, 内容区出现抖动
+               */
+  /*防止header-nav-menu height为0时, 内容区出现抖动*/
   border-top: 1px solid #e0e0e0;
 }
 .header .top-header .container .header-nav ul .header-nav-menu:hover {
