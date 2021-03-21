@@ -1,3 +1,5 @@
+@themeColor: #ff6700;
+
 body {
   /*字体族*/
   font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
@@ -162,7 +164,7 @@ body {
         }
 
         &:hover a {
-          color: #ff6700;
+          color: @themeColor;
           background-color: #fff;
         }
 
@@ -211,7 +213,7 @@ body {
         width: 55px;
         height: 55px;
         margin-top: 22.5px;
-        background-color: #ff6700;
+        background-color: @themeColor;
         position: relative;
         overflow: hidden;
 
@@ -270,7 +272,7 @@ body {
               text-decoration: none;
 
               &:hover {
-                color: #ff6700;
+                color: @themeColor;
               }
             }
 
@@ -313,7 +315,54 @@ body {
           .all-goods {
             margin-left: 52px;
             margin-right: 5px;
-            visibility: hidden;
+            //visibility: hidden;
+            position: relative;
+            a:hover {
+              color: #333;
+            }
+
+            .categoryList {
+              width: 234px;
+              height: 420px;
+              padding: 20px 0;
+              position: absolute;
+              //border: 1px solid crimson;
+              top: 100px;
+              left: -113px;
+              background-color: #969B9D;
+              //box-sizing: border-box;
+              border: none;
+
+              li {
+                width: 100%;
+                //border: 1px solid crimson;
+                //display: block;
+
+                a {
+                  //color: #fff;
+
+                  display: block;
+                  height: 42px;
+                  line-height: 42px;
+                  padding-left: 30px;
+                  padding-right: 20px;
+                  font-size: 14px;
+                  color: #fff;
+
+
+                  &:hover {
+                    background-color: @themeColor;
+                  }
+
+                  .icon-tubiaozhizuo-:before {
+                    font-size: 14px;
+                    float: right;
+                  }
+
+                }
+              }
+            }
+
           }
         }
       }
@@ -346,15 +395,15 @@ body {
           }
 
           &:focus {
-            border-color: #ff6700;
+            border-color: @themeColor;
 
             &~.search-btn {
-              border-color: #ff6700;
+              border-color: @themeColor;
             }
 
             &~.search-key-words {
               height: 180px;
-              border: 1px solid #ff6700;
+              border: 1px solid @themeColor;
               border-top: none;
             }
           }
@@ -370,7 +419,7 @@ body {
           //background-color: #795da3;
 
           &:hover {
-            background-color: #ff6700;
+            background-color: @themeColor;
             border-color: transparent;
 
             span {
