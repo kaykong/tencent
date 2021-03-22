@@ -220,7 +220,7 @@ body {
   color: #ff6700;
 }
 .header .top-header .container .header-nav ul .Js-header-nav-li:hover ~ .header-nav-menu {
-  height: 200px;
+  height: 230px;
   box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
 }
 .header .top-header .container .header-nav ul .header-nav-menu {
@@ -252,8 +252,44 @@ body {
   border-top: 1px solid #e0e0e0;
 }
 .header .top-header .container .header-nav ul .header-nav-menu:hover {
-  height: 200px;
+  height: 230px;
   box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+.header .top-header .container .header-nav ul .header-nav-menu .header-nav-menu-list {
+  width: 1226px;
+  height: 230px;
+  margin: 37px auto;
+}
+.header .top-header .container .header-nav ul .header-nav-menu .header-nav-menu-list li {
+  width: 180px;
+  margin-right: 24px;
+  text-align: center;
+}
+.header .top-header .container .header-nav ul .header-nav-menu .header-nav-menu-list li a img {
+  width: 160px;
+  height: 100px;
+}
+.header .top-header .container .header-nav ul .header-nav-menu .header-nav-menu-list li a .title {
+  font-size: 12px;
+  color: #333;
+  margin-top: 8px;
+}
+.header .top-header .container .header-nav ul .header-nav-menu .header-nav-menu-list li a .price {
+  font-size: 13px;
+  color: #ff6700;
+  margin-top: 3px;
+}
+.header .top-header .container .header-nav ul .header-nav-menu .header-nav-menu-list li::before {
+  content: '';
+  display: block;
+  float: left;
+  width: 1px;
+  height: 100px;
+  top: 35px;
+  border-left: 1px solid #e0e0e0;
+}
+.header .top-header .container .header-nav ul .header-nav-menu .header-nav-menu-list li.first::before {
+  border-color: transparent;
 }
 .header .top-header .container .header-nav ul .all-goods {
   margin-left: 52px;
