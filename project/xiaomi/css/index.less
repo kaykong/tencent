@@ -225,19 +225,29 @@ body {
           /*绝对定位会改变元素的性质，行内变成块，块的宽高被内容撑开*/
           position: absolute;
           //background-size: contain;
-          background-position: center;
+          //background-position: center;
+          //background-size: contain;
+          //background-size: cover;
           //vertical-align: center;
           transition: left .2s;
         }
 
         .mi-logo {
           left: 0px;
+          width: 49px;
+          height: 49px;
+          margin: 3px;
           background-image: url("../img/mi-logo.png");
+          //background-position: center;
         }
 
         .mi-home {
           left: -55px;
+          width: 49px;
+          height: 49px;
+          margin: 3px;
           background-image: url("../img/mi-home.png");
+          //background-position: center;
         }
 
         &:hover {
