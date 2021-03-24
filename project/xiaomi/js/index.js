@@ -1,3 +1,6 @@
+
+var data;
+
 window.onload = function () {
 
     let headerSearch = document.getElementsByClassName("header-search")[0];
@@ -15,6 +18,32 @@ window.onload = function () {
             document.getElementsByClassName("search-txt")[0].blur();
             // document.getElementsByClassName("header-nav-menu")[0].style.display = "block";
 
+            let dataKey = this.getAttribute("dataKey");
+            let headerMenuData = data.headerMenu[dataKey];
+            let menuUl = document.getElementsByClassName("header-nav-menu-list")[0];
+            let menuHtml = "";
+            // menuUl.innerHTML = "";
+            for (let j = 0; j < headerMenuData.length; j++) {
+
+                let li = document.createElement("li");
+                if (j == 0) {
+                    li.className = "first";
+                }
+                li.innerHTML = "<a href=\"javascript:;\">\n" +
+                    "    <div>\n" +
+                    "        <img src=\""+ headerMenuData[j].imgSrc +"\" alt=\"\">\n" +
+                    "    </div>\n" +
+                    "    <div class=\"title\">\n" +
+                    "        " + headerMenuData[j].name + "\n" +
+                    "    </div>\n" +
+                    "    <p class=\"price\">" + headerMenuData[j].price + "</p>\n" +
+                    "</a>";
+                menuHtml += li.outerHTML;
+                // menuUl.appendChild(li);
+            }
+            // data.headerMenu[dataKey];
+            console.log(menuHtml);
+            menuUl.innerHTML = menuHtml;
         };
     }
 
@@ -82,5 +111,41 @@ window.onload = function () {
         }
     }
 
+    getData();
 
 };
+
+function getData() {
+
+    var url = "data.json"
+
+    var request = new XMLHttpRequest();
+
+    request.open("get", url);
+
+    request.send(null);
+
+    request.onload = function () {
+
+        if (request.status == 200) {
+
+            var json = JSON.parse(request.responseText);
+            data = json;
+            console.log(json);
+
+
+           /* var ol = document.getElementById('ol');
+
+            json.person.map(person => {
+
+                var li = document.createElement("li");
+
+                li.innerHTML = `名字是 ${person.name} 图片是 ${person.image}`;
+
+                ol.append(li);
+
+            })*/
+
+        }
+    }
+}

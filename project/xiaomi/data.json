@@ -1,0 +1,102 @@
+{
+  "headerMenu": {
+    "xiaomiPhone": [
+      {
+        "imgSrc": "./img/menu/m1-1.png",
+        "name": "小米10S",
+        "price": "3299起"
+      },
+      {
+        "imgSrc": "./img/menu/m1-2.png",
+        "name": "小米11",
+        "price": "3999起"
+      },
+      {
+        "imgSrc": "./img/menu/m1-3.png",
+        "name": "小米10至尊纪念版",
+        "price": "5299起"
+      },
+      {
+        "imgSrc": "./img/menu/m1-4.png",
+        "name": "小米10 青春版 5G",
+        "price": "1999起"
+      },
+      {
+        "imgSrc": "./img/menu/m1-5.png",
+        "name": "小米10S",
+        "price": "3299起"
+      },
+      {
+        "imgSrc": "./img/menu/m1-6.png",
+        "name": "小米MIX",
+        "price": "19999起"
+      }
+    ],
+    "redmiPhone": [
+      {
+        "imgSrc": "./img/menu/m2-1.png",
+        "name": "K40 PR0 系列",
+        "price": "2799起"
+      },
+      {
+        "imgSrc": "./img/menu/m2-2.png",
+        "name": "Redmi K40",
+        "price": "1999起"
+      },
+      {
+        "imgSrc": "./img/menu/m2-3.png",
+        "name": "Redmi Note 9 系列",
+        "price": "999起"
+      },
+      {
+        "imgSrc": "./img/menu/m2-4.png",
+        "name": "Redmi K30S 至尊纪念版",
+        "price": "2599起"
+      },
+      {
+        "imgSrc": "./img/menu/m2-5.jpg",
+        "name": "Redmi K30 至尊纪念版",
+        "price": "1999起"
+      },
+      {
+        "imgSrc": "./img/menu/m2-6.jpg",
+        "name": "Redmi 9A",
+        "price": "499起"
+      }
+    ],
+    "tv": [
+      {
+        "imgSrc": "./img/menu/m3-1.png",
+        "name": "Redmi MAX 86''超大屏电视",
+        "price": "2799起"
+      },
+      {
+        "imgSrc": "./img/menu/m3-2.png",
+        "name": "小米电视大师 82英寸至尊纪念版",
+        "price": "1999起"
+      },
+      {
+        "imgSrc": "./img/menu/m3-3.png",
+        "name": "小米电视大师 82英寸",
+        "price": "999起"
+      },
+      {
+        "imgSrc": "./img/menu/m3-4.jpg",
+        "name": "小米透明电视",
+        "price": "2599起"
+      },
+      {
+        "imgSrc": "./img/menu/m3-5.png",
+        "name": "小米电视大师 65英寸 OLED",
+        "price": "1999起"
+      },
+      {
+        "imgSrc": "./img/menu/m3-6.jpg",
+        "name": "Redmi 智能电视MAX 98''",
+        "price": "499起"
+      }
+    ]
+  }
+}
+
+
