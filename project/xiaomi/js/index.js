@@ -147,15 +147,7 @@ window.onload = function () {
             INDEX = 0;
         }
     }
-
     getData();
-
-
-    Ajax.get("https://service-6qcrvxv3-1305383279.sh.apigw.tencentcs.com/release/mongoDB?methodName=getAllMessage",
-        function (data) {
-            console.log("腾讯云", data);
-        });
-
 };
 
 function getData() {
