@@ -5,6 +5,9 @@ var Ajax = {
         // XMLHttpRequest对象用于在后台与服务器交换数据
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, false);
+        xhr.setRequestHeader( 'Content-Type', 'application/json' );
+        xhr.setRequestHeader( 'Access-Control-Allow-Origin', '*');
+        xhr.withCredentials = false;
         xhr.onreadystatechange = function () {
             // readyState == 4说明请求已完成
             if (xhr.readyState == 4) {
