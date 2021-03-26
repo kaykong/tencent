@@ -1,5 +1,39 @@
-
 var data;
+
+var Ajax = {
+    get: function (url, callback) {
+        // XMLHttpRequest对象用于在后台与服务器交换数据
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, false);
+        xhr.onreadystatechange = function () {
+            // readyState == 4说明请求已完成
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200 || xhr.status == 304) {
+                    console.log(xhr.responseText);
+                    callback(xhr.responseText);
+                }
+            }
+        }
+        xhr.send();
+    },
+
+    // data应为'a=a1&b=b1'这种字符串格式，在jq里如果data为对象会自动将对象转成这种字符串格式
+    post: function (url, data, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url, false);
+        // 添加http头，发送信息至服务器时内容编码类型
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200 || xhr.status == 304) {
+                    // console.log(xhr.responseText);
+                    callback(xhr.responseText);
+                }
+            }
+        }
+        xhr.send(data);
+    }
+}
 
 window.onload = function () {
 
@@ -31,7 +65,7 @@ window.onload = function () {
                 }
                 li.innerHTML = "<a href=\"javascript:;\">\n" +
                     "    <div>\n" +
-                    "        <img src=\""+ headerMenuData[j].imgSrc +"\" alt=\"\">\n" +
+                    "        <img src=\"" + headerMenuData[j].imgSrc + "\" alt=\"\">\n" +
                     "    </div>\n" +
                     "    <div class=\"title\">\n" +
                     "        " + headerMenuData[j].name + "\n" +
@@ -42,7 +76,7 @@ window.onload = function () {
                 // menuUl.appendChild(li);
             }
             // data.headerMenu[dataKey];
-            console.log(menuHtml);
+            // console.log(menuHtml);
             menuUl.innerHTML = menuHtml;
         };
     }
@@ -51,8 +85,8 @@ window.onload = function () {
 
     //获取main下的cycle-list下的cycle
     let cycleList = document.getElementsByClassName("main")[0]
-                        .getElementsByClassName("cycle-list")[0]
-                        .getElementsByClassName("cycle");
+        .getElementsByClassName("cycle-list")[0]
+        .getElementsByClassName("cycle");
 
     var INDEX = 0;
     for (let i = 0; i < cycleList.length; i++) {
@@ -83,7 +117,7 @@ window.onload = function () {
     }
 
     // 定时器, 5000ms执行一次cycleClick函数
-    setInterval(cycleClick,5000);
+    setInterval(cycleClick, 5000);
 
     function cycleClick() {
         //圆形按钮 active
@@ -113,6 +147,12 @@ window.onload = function () {
 
     getData();
 
+
+    Ajax.get("https://service-6qcrvxv3-1305383279.sh.apigw.tencentcs.com/release/mongoDB?methodName=getAllMessage",
+        function (data) {
+            console.log("腾讯云", data);
+        });
+
 };
 
 function getData() {
@@ -134,17 +174,17 @@ function getData() {
             console.log(json);
 
 
-           /* var ol = document.getElementById('ol');
+            /* var ol = document.getElementById('ol');
 
-            json.person.map(person => {
+             json.person.map(person => {
 
-                var li = document.createElement("li");
+                 var li = document.createElement("li");
 
-                li.innerHTML = `名字是 ${person.name} 图片是 ${person.image}`;
+                 li.innerHTML = `名字是 ${person.name} 图片是 ${person.image}`;
 
-                ol.append(li);
+                 ol.append(li);
 
-            })*/
+             })*/
 
         }
     }
