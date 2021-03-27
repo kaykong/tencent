@@ -10,4 +10,9 @@ window.onload = function () {
 
     }
 
+    let changeIcon = document.getElementsByClassName("changeIcon")[0];
+    changeIcon.onclick = function () {
+        alert("dianji");
+    }
+
 };

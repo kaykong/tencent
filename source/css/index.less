@@ -70,11 +70,52 @@ a {
   .header {
     width: 100%;
     height: 30px;
+    position: relative;
 
     .icon {
       margin-top: 3px;
       float: left;
       width: 35px;
+      height: 30px;
+
+
+      img {
+        position: absolute;
+        top: 3px;
+        /*初始化时完全透明*/
+        opacity: 0;
+        /*过渡2s 图片由完全透明--> 不透明*/
+        transition: 1s;
+      }
+
+      .imgOn {
+        /*图片不透明*/
+        opacity: 1;
+      }
+
+      &:hover {
+        & + .changeIcon {
+          //opacity: 1;
+          height: 100px;
+
+          //display: block;
+        }
+      }
+    }
+
+    .changeIcon {
+      position: absolute;
+      width: 100px;
+      height: 0px;
+      background-color: #df5000;
+      //display: none;
+      //opacity: 0;
+      &:hover {
+          //opacity: 1;
+          height: 100px;
+
+          //display: block;
+      }
     }
 
     .nickname {
@@ -91,7 +132,6 @@ a {
       }
     }
   }
-
 
 
   .content {
@@ -140,24 +180,22 @@ a {
   }
 
 
-  input::-webkit-input-placeholder {
-    color: #BFBFBF;
-  }
-  input:-moz-placeholder {
-    /* FF 4-18 */
-    color: #BFBFBF;
-  }
-  input::-moz-placeholder {
-    /* FF 19+ */
-    color: #BFBFBF;
-  }
-  input:-ms-input-placeholder {
-    /* IE 10+ */
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     color: #BFBFBF;
   }
 
-  textarea::-webkit-input-placeholder, textarea::-moz-placeholder,
-  textarea::-moz-placeholder, textarea::-ms-input-placeholder {
+  input:-moz-placeholder, textarea:-moz-placeholder {
+    /* FF 4-18 */
+    color: #BFBFBF;
+  }
+
+  input::-moz-placeholder, textarea::-moz-placeholder {
+    /* FF 19+ */
+    color: #BFBFBF;
+  }
+
+  input:-ms-input-placeholder, .textarea:-ms-input-placeholder {
+    /* IE 10+ */
     color: #BFBFBF;
   }
 

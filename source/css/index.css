@@ -54,11 +54,37 @@ a {
 .message .header {
   width: 100%;
   height: 30px;
+  position: relative;
 }
 .message .header .icon {
   margin-top: 3px;
   float: left;
   width: 35px;
+  height: 30px;
+}
+.message .header .icon img {
+  position: absolute;
+  top: 3px;
+  /*初始化时完全透明*/
+  opacity: 0;
+  /*过渡2s 图片由完全透明--> 不透明*/
+  transition: 1s;
+}
+.message .header .icon .imgOn {
+  /*图片不透明*/
+  opacity: 1;
+}
+.message .header .icon:hover + .changeIcon {
+  height: 100px;
+}
+.message .header .changeIcon {
+  position: absolute;
+  width: 100px;
+  height: 0px;
+  background-color: #df5000;
+}
+.message .header .changeIcon:hover {
+  height: 100px;
 }
 .message .header .nickname {
   float: left;
@@ -103,25 +129,23 @@ a {
   outline: none;
   border: none;
 }
-.message input::-webkit-input-placeholder {
+.message input::-webkit-input-placeholder,
+.message textarea::-webkit-input-placeholder {
   color: #BFBFBF;
 }
-.message input:-moz-placeholder {
+.message input:-moz-placeholder,
+.message textarea:-moz-placeholder {
   /* FF 4-18 */
   color: #BFBFBF;
 }
-.message input::-moz-placeholder {
+.message input::-moz-placeholder,
+.message textarea::-moz-placeholder {
   /* FF 19+ */
   color: #BFBFBF;
 }
-.message input:-ms-input-placeholder {
+.message input:-ms-input-placeholder,
+.message .textarea:-ms-input-placeholder {
   /* IE 10+ */
-  color: #BFBFBF;
-}
-.message textarea::-webkit-input-placeholder,
-.message textarea::-moz-placeholder,
-.message textarea::-moz-placeholder,
-.message textarea::-ms-input-placeholder {
   color: #BFBFBF;
 }
 /*# sourceMappingURL=index.css.map */
