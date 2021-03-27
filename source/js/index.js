@@ -1,18 +1,18 @@
-
-const imgListLength = 21;
-
 window.onload = function () {
 
-    let imgListDiv = document.getElementsByClassName("imgList")[0];
+    let imgListDiv = document.getElementsByClassName("icon")[0];
+    let imgList = imgListDiv.getElementsByTagName("img");
 
-    let imgListInnerHtml = "";
-    for (let i = 1; i <= imgListLength; i++) {
-
+    for (let i = 0; i < imgList.length; i++) {
+        imgList[i].className = "";
     }
+    let imgIndex = parseInt(Math.random() * imgList.length, 10) + 1;//生成 [1, imgList.length] 的随机数
+    console.log(imgIndex);
+    imgList[imgIndex - 1].className = "imgOn";
 
-    let changeIcon = document.getElementsByClassName("changeIcon")[0];
+    /*let changeIcon = document.getElementsByClassName("changeIcon")[0];
     changeIcon.onclick = function () {
         alert("dianji");
-    }
+    }*/
 
 };
