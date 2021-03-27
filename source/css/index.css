@@ -17,6 +17,8 @@ input,
 textarea {
   font-family: Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
   color: #9a9a9a;
+  /*字间距*/
+  letter-spacing: 1px;
 }
 h1 {
   padding-top: 10px;
@@ -69,7 +71,7 @@ a {
 }
 .message .header .icon img {
   position: absolute;
-  top: 3px;
+  top: 2px;
   /*初始化时完全透明*/
   opacity: 0;
   /*过渡2s 图片由完全透明--> 不透明*/
@@ -124,10 +126,12 @@ a {
   color: #9A9A9A;
   background-color: #D3D3D3;
   cursor: pointer;
-}
-.message .addBtn:hover {
-  color: #fff;
-  background-color: #9A9A9A;
+  /*&:hover {
+      color: #fff;
+      background-color: #9A9A9A;
+      //background-color: #df5000;
+
+    }*/
 }
 .message .addBtnMobile {
   color: #fff;

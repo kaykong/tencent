@@ -16,7 +16,7 @@ window.onload = function () {
     }*/
 
     let addBtn = document.getElementsByClassName("addBtn")[0];
-    addBtn.addEventListener("touchstart", function () {
+    /*addBtn.addEventListener("touchstart", function () {
         this.className = "addBtn addBtnMobile";
     }, false);
 
@@ -26,6 +26,6 @@ window.onload = function () {
 
     addBtn.addEventListener("touchend", function () {
         this.className = "addBtn";
-    }, false);
+    }, false);*/
 
 };
