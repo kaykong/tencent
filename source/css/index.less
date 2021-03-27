@@ -3,7 +3,8 @@
   padding: 0;
 }
 
-@width: 300px;
+@bodyWith: 300px;
+@width: 280px;
 @iconWidth: 35px;
 @nameWidth: @width - @iconWidth;//235px
 
@@ -16,10 +17,10 @@ body {
   /*字体颜色*/
   color: #333;
   /*最小宽度, 设置后浏览器视口缩小到min-width以下, body宽度仍为min-width*/
-  min-width: @width;
+  min-width:@bodyWith;
+  //width: @bodyWith;
   //height: 1000px;
   background-color: #fff;
-  min-width: @width;
 }
 
 input, textarea {

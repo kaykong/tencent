@@ -8,8 +8,8 @@ body {
   /*字体颜色*/
   color: #333;
   /*最小宽度, 设置后浏览器视口缩小到min-width以下, body宽度仍为min-width*/
-  background-color: #fff;
   min-width: 300px;
+  background-color: #fff;
 }
 input,
 textarea {
@@ -28,7 +28,7 @@ a {
   text-decoration: none;
 }
 .project {
-  width: 300px;
+  width: 280px;
   margin: auto;
 }
 .project .project-list {
@@ -48,7 +48,7 @@ a {
 }
 .message {
   margin-top: 30px;
-  width: 300px;
+  width: 280px;
 }
 .message .title {
   color: #333;
@@ -91,16 +91,16 @@ a {
   height: 100px;
 }
 .message .header .nickname {
-  width: 265px;
+  width: 245px;
   float: left;
   border: 1px solid #e0e0e0;
   box-sizing: border-box;
 }
 .message .header .nickname input {
-  width: 265px;
+  width: 245px;
 }
 .message .content {
-  width: 300px;
+  width: 280px;
   margin-top: 10px;
   padding-left: 4px;
   padding-right: 4px;
@@ -116,7 +116,7 @@ a {
   height: 40px;
 }
 .message .addBtn {
-  width: 300px;
+  width: 280px;
   height: 30px;
   margin-top: 10px;
   line-height: 30px;
