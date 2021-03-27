@@ -16,7 +16,7 @@ var Ajax = {
                     callback(xhr.responseText);
                 }
             }
-        }
+        };
         xhr.send();
     },
 
@@ -33,10 +33,10 @@ var Ajax = {
                     callback(xhr.responseText);
                 }
             }
-        }
+        };
         xhr.send(data);
     }
-}
+};
 
 window.onload = function () {
 

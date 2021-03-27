@@ -10,7 +10,7 @@ body {
   color: #333;
   /*最小宽度, 设置后浏览器视口缩小到min-width以下, body宽度仍为min-width*/
   min-width: 1226px;
-  height: 1500px;
+  //height: 1500px;
   background-color: #fff;
   min-width: 350px;
 }
@@ -37,7 +37,7 @@ a {
   //padding-left: 20px;
   width: 350px;
   //border: 1px solid crimson;
-  height: 1000px;
+  //height: 1000px;
   margin: auto;
 
   .project-list {
@@ -208,6 +208,121 @@ a {
   input:-ms-input-placeholder, .textarea:-ms-input-placeholder {
     /* IE 10+ */
     color: #BFBFBF;
+  }
+
+}
+
+.message-list {
+  margin-top: 20px;
+  //border: 1px solid salmon;
+
+  position: absolute;
+  top: 450px;
+  bottom: 0;
+  overflow: auto;
+
+
+  color: #9a9a9a;
+
+  &::after {
+    display: block;
+    text-align: center;
+    content: 'end';
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+  }
+
+  .header {
+    width: 100%;
+    height: 30px;
+    position: relative;
+
+    .icon {
+      margin-top: 3px;
+      float: left;
+      width: 35px;
+      height: 30px;
+
+      img {
+        position: absolute;
+        top: 2px;
+      }
+    }
+
+    .nickname {
+      //width: 315px;
+      width: 180px;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+
+
+      //padding-left: 5px;
+      //border: 1px solid #e0e0e0;
+      box-sizing: border-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      padding-left: 5px;
+
+
+      /*border: 1px solid crimson;
+      box-sizing: border-box;*/
+    }
+
+    .time {
+      //width: 125px;
+      //height: 30px;
+      font-size: 12px;
+      line-height: 1;
+      float: right;
+      /*border: 1px solid crimson;
+      box-sizing: border-box;*/
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      position: relative;
+      top: 13px;
+    }
+  }
+
+
+  .content {
+    //float: left;
+    margin-top: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 5px;
+    width: 342px;
+    height: auto;
+    //border: 1px solid #e0e0e0;
+    //margin-left: 10px;
+
+    /*textarea {
+      outline: none;
+      resize: none;
+      border: none;
+      width: 342px;
+      height: auto;
+    }*/
+  }
+
+
+  .msg-item::before {
+    content: '';
+    display: block;
+    width: 100%;
+    margin: 15px auto;
+    border-top: 1px solid #BFBFBF;
+    //margin-bottom: 10px;
+  }
+
+  .first-msg-item::before {
+    display: none;
   }
 
 }
