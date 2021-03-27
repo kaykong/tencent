@@ -20,12 +20,15 @@ var Ajax = {
 
     // data应为'a=a1&b=b1'这种字符串格式，在jq里如果data为对象会自动将对象转成这种字符串格式
     // data 为json格式
-    post: function (url, data, callback) {
+    post: function (url, data, callback, async) {
 
         data = JSON.stringify(data);
+        if (!async) {
+            async = false;
+        }
 
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', url, false);
+        xhr.open('POST', url, async);
         // 添加http头，发送信息至服务器时内容编码类型
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onreadystatechange = function () {
@@ -198,7 +201,7 @@ window.onload = function () {
             data,
             function (data) {
                 console.log("Ajax.post", data);
-            });
+            },true);
 
     };
     /*addBtn.addEventListener("touchstart", function () {

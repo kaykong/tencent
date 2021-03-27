@@ -9,6 +9,7 @@ body {
   color: #333;
   /*最小宽度, 设置后浏览器视口缩小到min-width以下, body宽度仍为min-width*/
   min-width: 1226px;
+  height: 1000px;
   background-color: #fff;
   min-width: 350px;
 }
@@ -30,6 +31,7 @@ a {
 }
 .project {
   width: 350px;
+  height: 1000px;
   margin: auto;
 }
 .project .project-list {
