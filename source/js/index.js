@@ -15,4 +15,17 @@ window.onload = function () {
         alert("dianji");
     }*/
 
+    let addBtn = document.getElementsByClassName("addBtn")[0];
+    addBtn.addEventListener("touchstart", function () {
+        this.className = "addBtn addBtnMobile";
+    }, false);
+
+    addBtn.addEventListener("touchmove", function () {
+        this.className = "addBtn addBtnMobile";
+    }, false);
+
+    addBtn.addEventListener("touchend", function () {
+        this.className = "addBtn";
+    }, false);
+
 };

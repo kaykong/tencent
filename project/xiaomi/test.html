@@ -3,16 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+        .test {
+            width: 300px;
+            height: 100px;
+            background-color: #D3D3D3;
+        }
+
+        .test:hover {
+            background-color: #9A9A9A;
+        }
+
+
+    </style>
+    <script>
+
+        window.onload = function () {
+            let testDiv = document.getElementsByClassName("test")[0];
+
+            /*testDiv.addEventListener("touchstart", function () {
+                this.style.backgroundColor = "#9A9A9A";
+            }, false);
+
+            testDiv.addEventListener("touchend", function () {
+                this.style.backgroundColor = "#D3D3D3";
+            }, false);*/
+        }
+
+
+
+
+    </script>
 </head>
 <body>
-<a href="javascript:;">
-    <div>
-        <img src="./img/menu/m1-1.webp" alt="">
+    <div class="test">
+
     </div>
-    <div class="title">
-        小米10S
-    </div>
-    <p class="price">3299起</p>
-</a>
 </body>
 </html>

@@ -13,6 +13,11 @@ body {
   background-color: #fff;
   min-width: 350px;
 }
+input,
+textarea {
+  font-family: Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  color: #9a9a9a;
+}
 h1 {
   padding-top: 10px;
   font-size: 20px;
@@ -116,11 +121,15 @@ a {
   margin-top: 10px;
   line-height: 30px;
   text-align: center;
-  color: #333;
+  color: #9A9A9A;
   background-color: #D3D3D3;
   cursor: pointer;
 }
 .message .addBtn:hover {
+  color: #fff;
+  background-color: #9A9A9A;
+}
+.message .addBtnMobile {
   color: #fff;
   background-color: #9A9A9A;
 }
