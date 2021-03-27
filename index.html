@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="source/css/index.css">
     <title>个人网站</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="source/js/index.js"></script>
     <!--PC和WAP自适应版-->
     <!--<script type="text/javascript">
         (function () {
@@ -59,14 +60,48 @@
                 console.log(error);
             });
     </script>
+
 </head>
 
 <body>
-<h1>个人练习项目</h1>
+
 <div class="project">
-    <br>
-    <a href="./project/xiaomi/index.html">小米商城首页</a>
-    <br>
+    <h1>个人练习项目</h1>
+    <div class="project-list">
+        <div class="xiaomi">
+
+            <a href="./project/xiaomi/index.html">
+
+                <img src="./source/img/project/xiaomi.png" alt="" width="100%">
+                <span>小米商城首页</span>
+
+            </a>
+        </div>
+    </div>
+
+    <div class="message">
+
+        <div class="header">
+            <div class="icon">
+                <img src="./source/img/msg/img001.jpg" alt="" width="24" height="24">
+            </div>
+            <div class="nickname">
+                <input type="text" placeholder="昵称">
+            </div>
+        </div>
+
+        <div class="content">
+<!--            <textarea name=""  cols="50" rows="5" placeholder="留言板" ></textarea>-->
+            <textarea name="" id="content" cols="" rows="" placeholder="留言板" ></textarea>
+<!--            <input type="text" placeholder="留言板">-->
+        </div>
+        <div class="addBtn">
+            提交
+        </div>
+    </div>
+    <!--<div class="imgList">
+        <img src="./source/img/msg/img002.jpg" alt="" width="24" height="24">
+    </div>-->
 </div>
 
 <!--<audio controls>

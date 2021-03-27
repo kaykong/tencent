@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /*字体族*/
+  font: 14px/1.5 Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  /*字体颜色*/
+  color: #333;
+  /*最小宽度, 设置后浏览器视口缩小到min-width以下, body宽度仍为min-width*/
+  min-width: 1226px;
+  height: 1500px;
+  background-color: #fff;
+  min-width: 350px;
+}
+h1 {
+  padding-top: 10px;
+  font-size: 20px;
+}
+a {
+  font-size: 16px;
+  color: #424242;
+  text-decoration: none;
+}
+.project {
+  padding-left: 20px;
+  width: 350px;
+  height: 1000px;
+  margin: auto;
+}
+.project .project-list {
+  margin-top: 20px;
+}
+.project .project-list a {
+  width: 100%;
+  display: block;
+  text-align: center;
+  border: 1px solid transparent;
+}
+.project .project-list a span {
+  border-bottom: 1px solid #e0e0e0;
+}
+.project .project-list a:hover {
+  color: #df5000;
+}
+.message {
+  margin-top: 30px;
+  width: 350px;
+}
+.message .header {
+  width: 100%;
+  height: 30px;
+}
+.message .header .icon {
+  margin-top: 3px;
+  float: left;
+  width: 35px;
+}
+.message .header .nickname {
+  float: left;
+  width: 315px;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+.message .header .nickname input {
+  width: 305px;
+  margin: 0 5px;
+}
+.message .content {
+  margin-top: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 5px;
+  border: 1px solid #e0e0e0;
+}
+.message .content textarea {
+  outline: none;
+  resize: none;
+  border: none;
+  width: 342px;
+  height: 40px;
+}
+.message .addBtn {
+  width: 350px;
+  height: 30px;
+  margin-top: 10px;
+  line-height: 30px;
+  text-align: center;
+  color: #333;
+  background-color: #D3D3D3;
+  cursor: pointer;
+}
+.message .addBtn:hover {
+  color: #fff;
+  background-color: #9A9A9A;
+}
+.message input {
+  height: 30px;
+  outline: none;
+  border: none;
+}
+.message input::-webkit-input-placeholder {
+  color: #BFBFBF;
+}
+.message input:-moz-placeholder {
+  /* FF 4-18 */
+  color: #BFBFBF;
+}
+.message input::-moz-placeholder {
+  /* FF 19+ */
+  color: #BFBFBF;
+}
+.message input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #BFBFBF;
+}
+.message textarea::-webkit-input-placeholder,
+.message textarea::-moz-placeholder,
+.message textarea::-moz-placeholder,
+.message textarea::-ms-input-placeholder {
+  color: #BFBFBF;
+}
+/*# sourceMappingURL=index.css.map */
