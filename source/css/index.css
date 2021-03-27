@@ -8,9 +8,8 @@ body {
   /*字体颜色*/
   color: #333;
   /*最小宽度, 设置后浏览器视口缩小到min-width以下, body宽度仍为min-width*/
-  min-width: 1226px;
   background-color: #fff;
-  min-width: 350px;
+  min-width: 300px;
 }
 input,
 textarea {
@@ -29,7 +28,7 @@ a {
   text-decoration: none;
 }
 .project {
-  width: 350px;
+  width: 300px;
   margin: auto;
 }
 .project .project-list {
@@ -49,7 +48,7 @@ a {
 }
 .message {
   margin-top: 30px;
-  width: 350px;
+  width: 300px;
 }
 .message .title {
   color: #333;
@@ -92,31 +91,32 @@ a {
   height: 100px;
 }
 .message .header .nickname {
+  width: 265px;
   float: left;
-  width: 315px;
   border: 1px solid #e0e0e0;
   box-sizing: border-box;
 }
 .message .header .nickname input {
-  width: 305px;
-  margin: 0 5px;
+  width: 265px;
 }
 .message .content {
+  width: 300px;
   margin-top: 10px;
   padding-left: 4px;
   padding-right: 4px;
   padding-top: 5px;
   border: 1px solid #e0e0e0;
+  box-sizing: border-box;
 }
 .message .content textarea {
   outline: none;
   resize: none;
   border: none;
-  width: 342px;
+  width: 100%;
   height: 40px;
 }
 .message .addBtn {
-  width: 350px;
+  width: 300px;
   height: 30px;
   margin-top: 10px;
   line-height: 30px;
@@ -189,7 +189,6 @@ a {
   top: 2px;
 }
 .message-list .header .nickname {
-  width: 180px;
   height: 30px;
   line-height: 30px;
   float: left;
@@ -218,7 +217,7 @@ a {
   padding-left: 4px;
   padding-right: 4px;
   padding-top: 5px;
-  width: 342px;
+  width: 100%;
   height: auto;
   /*textarea {
       outline: none;

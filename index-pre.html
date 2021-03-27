@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="source/css/index.css">
+    <title>个人网站</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="source/js/index.js"></script>
+    <!--PC和WAP自适应版-->
+    <!--<script type="text/javascript">
+        (function () {
+            var appid = 'cyvlGMEA5';
+            var conf = 'prod_2e3e9bc374ad1535bca9e2c2e7e3a369';
+            var width = window.innerWidth || document.documentElement.clientWidth;
+            if (width < 1000) {
+                var head = document.getElementsByTagName('head')[0] || document.head || document.documentElement;
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.charset = 'utf-8';
+                script.id = 'changyan_mobile_js';
+                script.src = 'https://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf;
+                head.appendChild(script);
+            } else {
+                var loadJs = function (d, a) {
+                    var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+                    var b = document.createElement("script");
+                    b.setAttribute("type", "text/javascript");
+                    b.setAttribute("charset", "UTF-8");
+                    b.setAttribute("src", d);
+                    if (typeof a === "function") {
+                        if (window.attachEvent) {
+                            b.onreadystatechange = function () {
+                                var e = b.readyState;
+                                if (e === "loaded" || e === "complete") {
+                                    b.onreadystatechange = null;
+                                    a()
+                                }
+                            }
+                        } else {
+                            b.onload = a
+                        }
+                    }
+                    c.appendChild(b)
+                };
+                loadJs("https://cy-cdn.kuaizhan.com/upload/changyan.js", function () {
+                    window.changyan.api.config({appid: appid, conf: conf})
+                });
+            }
+        })();
+    </script>-->
+   <!-- <script>
+        // 为给定 ID 的 user 创建请求
+        axios.get('https://service-6qcrvxv3-1305383279.sh.apigw.tencentcs.com/release/mongoDB?methodName=getAllMessage')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    </script>-->
+
+</head>
+
+<body>
+
+<div class="project">
+    <h1>个人练习项目</h1>
+    <div class="project-list">
+        <div class="xiaomi">
+
+            <a href="./project/xiaomi/index.html">
+
+                <img src="./source/img/project/xiaomi.png" alt="" width="100%">
+                <span>小米商城首页</span>
+
+            </a>
+        </div>
+    </div>
+
+    <div class="message">
+<!--        <div class="title">留言板</div>-->
+        <div class="header">
+            <div class="icon">
+                <img src="./source/img/msg/img001.jpg" alt="" width="26" height="26">
+                <img class="imgOn" src="./source/img/msg/img002.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img003.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img004.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img005.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img006.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img007.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img008.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img009.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img010.jpg" alt="" width="26" height="26">
+            </div>
+            <!--<div class="changeIcon">
+            </div>-->
+            <div class="nickname">
+                <input type="text" id="nickname-input" placeholder="昵称">
+            </div>
+        </div>
+
+        <div class="content">
+            <textarea name="" id="content-input" cols="" rows="" placeholder="留言板"></textarea>
+        </div>
+
+        <div class="addBtn">提交</div>
+    </div>
+
+    <div class="message-list">
+<!--
+
+        <div class="msg-item">
+            <div class="header">
+                <div class="icon">
+                    <img class="imgOn" src="./source/img/msg/img002.jpg" alt="" width="26" height="26">
+                </div>
+
+                <div class="nickname">
+                    我是昵称
+                </div>
+
+                <div class="time">
+                    2021-03-27 16:30:20
+                </div>
+            </div>
+
+            <div class="content">
+                Gitee.com(码云) 是 OSCHINA.NET 推出的代码托管平台,支持 Git 和 SVN,提供免费的私有仓库托管。目前已有超过 600 万的开发者选择 Gitee。
+            </div>
+        </div>
+
+-->
+    </div>
+
+
+</div>
+
+<!--<audio controls>
+&lt;!&ndash; 对不起，您的浏览器不支持播放音频！请升级浏览器！ &ndash;&gt;
+<source src="./source/audio.mp3">
+<source src="./source/audio.ogg">
+<embed src="./source/audio.mp3" type="audio/mp3" width="300" height="100">
+</audio>-->
+
+<br>
+<!--<div id="SOHUCS" sid="index"></div>-->
+</body>
+</html>
