@@ -23,7 +23,6 @@ a {
   text-decoration: none;
 }
 .project {
-  padding-left: 20px;
   width: 350px;
   height: 1000px;
   margin: auto;
@@ -46,6 +45,11 @@ a {
 .message {
   margin-top: 30px;
   width: 350px;
+}
+.message .title {
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 .message .header {
   width: 100%;
