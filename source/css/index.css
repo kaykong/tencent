@@ -30,6 +30,7 @@ a {
 .project {
   width: 280px;
   margin: auto;
+  padding: 0 10px;
 }
 .project .project-list {
   margin-top: 20px;
