@@ -231,14 +231,11 @@ a {
       height: auto;
     }*/
 }
-.message-list .msg-item::before {
+.message-list .msg-item::after {
   content: '';
   display: block;
-  width: 100%;
+  width: 90%;
   margin: 15px auto;
-  border-top: 1px solid #BFBFBF;
-}
-.message-list .first-msg-item::before {
-  display: none;
+  border-top: 1px solid #f6f6f6;
 }
 /*# sourceMappingURL=index.css.map */
