@@ -13,6 +13,9 @@ html {
   font-size: 5.33333333vw;
   background-color: #fff;
 }
+body {
+  font-family: Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
 input,
 textarea {
   font-family: Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
@@ -22,6 +25,12 @@ textarea {
 }
 input {
   color: #8E8E8E;
+}
+.clearfix::before,
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 h1 {
   padding-top: 0.5rem;
@@ -47,7 +56,7 @@ a {
 .project .project-list a span {
   border-bottom: 1px solid #e0e0e0;
   color: #424242;
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 .message {
   margin-top: 0.75rem;
@@ -130,7 +139,8 @@ a {
   line-height: 2rem;
   text-align: center;
   color: #9A9A9A;
-  background-color: #D3D3D3;
+  color: #fff;
+  background-color: #ff6700;
   cursor: pointer;
   /*&:hover {
       color: #fff;
@@ -175,66 +185,89 @@ a {
   display: block;
   text-align: center;
   content: 'end';
-  font-size: 0.3rem;
+  font-size: 0.675rem;
   height: 1rem;
   line-height: 1rem;
   margin-bottom: 0.5rem;
   width: 100%;
 }
-.message-list .msg-item::after {
-  content: '';
-  display: block;
-  width: 90%;
-  margin: 15px auto;
-  border-top: 1px solid #f6f6f6;
+.message-list .msg-item {
+  /*&::after {
+      content: '';
+      display: block;
+      width: 90%;
+      margin: 15px auto;
+      border-top: 1px solid #f6f6f6;
+      //margin-bottom: 10/40rem);
+    }*/
+  margin-bottom: 1rem;
 }
-.message-list .msg-item .header {
-  width: 100%;
-  height: 1.5rem;
-}
-.message-list .msg-item .header .icon {
-  margin-top: 0.075rem;
+.message-list .msg-item .msg-item-left {
   float: left;
+  width: 2rem;
+  height: 2rem;
+  /*  border: 1px solid crimson;
+        box-sizing: border-box;*/
+}
+.message-list .msg-item .msg-item-left img {
   width: 1.5rem;
   height: 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
 }
-.message-list .msg-item .header .icon img {
-  width: 1.25rem;
-  height: 1.25rem;
-  top: 0.05rem;
+.message-list .msg-item .msg-item-right {
+  float: left;
+  /*border: 1px solid skyblue;
+      box-sizing: border-box;*/
+  width: 15.25rem;
+  overflow: hidden;
 }
-.message-list .msg-item .header .nickname {
-  width: 8.25rem;
+.message-list .msg-item .msg-item-right .nickname {
+  width: 11.25rem;
   height: 1.5rem;
   line-height: 1.5rem;
-  float: left;
   box-sizing: border-box;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding-left: 0.375rem;
-  color: #8E8E8E;
+  color: #333;
+  font-size: 0.75rem;
+  font-weight: bold;
   /*border: 1px solid crimson;
         box-sizing: border-box;*/
 }
-.message-list .msg-item .header .time {
-  font-size: 0.675rem;
-  line-height: 1.5rem;
-  float: right;
-}
-.message-list .msg-item .content {
-  margin-top: 0.375rem;
+.message-list .msg-item .msg-item-right .content {
+  margin-top: 0.25rem;
+  /*padding-right: (40/40rem);
+        margin-right: (40/40rem);*/
   /*padding-left: 4/40rem);
-      padding-right: 4/40rem);
-      padding-top: 5/40rem);*/
-  width: 100%;
-  height: auto;
+        padding-right: 4/40rem);
+        padding-top: 5/40rem);*/
+  width: 98%;
+  font-size: 0.75rem;
+  color: #333;
   /*textarea {
-        outline: none;
-        resize: none;
-        border: none;
-        width: 342/40rem);
-        height: auto;
-      }*/
+          outline: none;
+          resize: none;
+          border: none;
+          width: 342/40rem);
+          height: auto;
+        }*/
+}
+.message-list .msg-item .msg-item-right .msg-item-right-bottom {
+  margin-top: 0.5rem;
+  font-size: 0.675rem;
+}
+.message-list .msg-item .msg-item-right .msg-item-right-bottom .time {
+  float: left;
+}
+.message-list .msg-item .msg-item-right .msg-item-right-bottom .iconfont {
+  font-size: 0.75rem;
+  float: right;
+  margin-right: 0.5rem;
+}
+.message-list .msg-item .msg-item-right .msg-item-right-bottom .icon-zanmianxing {
+  color: #ff6700;
 }
 /*# sourceMappingURL=index-mobile.css.map */

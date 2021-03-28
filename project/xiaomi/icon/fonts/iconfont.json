@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "18729656",
+      "name": "赞",
+      "font_class": "zan2",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "18729776",
+      "name": "赞 面性",
+      "font_class": "zanmianxing",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "16286931",
+      "name": "点赞",
+      "font_class": "dianzan",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "8406813",
+      "name": "赞",
+      "font_class": "zan1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
       "icon_id": "6237077",
       "name": "右",
       "font_class": "tubiaozhizuo-",

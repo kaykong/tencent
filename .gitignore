@@ -20,4 +20,6 @@ bin-release/
 /.idea/vcs.xml
 /.idea/kongkk.iml
 /.idea/misc.xml
-/.idea/modules.xml
+/.idea/
+
+.gitignore

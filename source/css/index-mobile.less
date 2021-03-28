@@ -6,7 +6,7 @@
 @total-width: 750;
 @width: (693/40rem);
 @iconWidth: (60/40rem);
-@nickNameWidth: @width - @iconWidth - (10/40);//235px
+@nickNameWidth: @width - @iconWidth - (10/40); //235px
 
 .w {
   width: (693/40rem);
@@ -20,6 +20,10 @@ html {
   background-color: #fff;
 }
 
+body {
+  font-family: Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+
 input, textarea {
   font-family: Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
   color: #9a9a9a;
@@ -31,6 +35,12 @@ input {
   color: #8E8E8E;
 }
 
+.clearfix::before,
+.clearfix::after{
+  content: '';
+  display: table;
+  clear: both;
+}
 
 h1 {
   //text-align: center;
@@ -42,7 +52,7 @@ h1 {
 }
 
 a {
- /* font-size: (20/40rem);*/
+  /* font-size: (20/40rem);*/
   color: #424242;
   text-decoration: none;
 }
@@ -62,7 +72,8 @@ a {
       span {
         border-bottom: 1px solid #e0e0e0;
         color: #424242;
-        font-size: (40/40rem);
+        //color: #ff6700;
+        font-size: (30/40rem);
       }
     }
 
@@ -199,9 +210,13 @@ a {
     line-height: (80/40rem);
     text-align: center;
     color: #9A9A9A;
+    color: #fff;
     //color: #f5f2f0;
-    background-color: #D3D3D3;
+    //background-color: #D3D3D3;
+    background-color: #ff6700;
     cursor: pointer;
+
+    //border-radius: 10px;
 
     /*&:hover {
       color: #fff;
@@ -260,7 +275,7 @@ a {
     display: block;
     text-align: center;
     content: 'end';
-    font-size: (12/40rem);
+    font-size: (27/40rem);
     height: (40/40rem);
     line-height: (40/40rem);
     margin-bottom: (20/40rem);
@@ -269,44 +284,57 @@ a {
 
   .msg-item {
 
-    &::after {
+    /*&::after {
       content: '';
       display: block;
       width: 90%;
       margin: 15px auto;
       border-top: 1px solid #f6f6f6;
       //margin-bottom: 10/40rem);
-    }
+    }*/
 
-    .header {
-      width: 100%;
-      height: (60/40rem);
+    margin-bottom: (40/40rem);
+
+    .msg-item-left {
+      float: left;
+
+      //margin-top: (3/40rem);
+      width: (80/40rem);
+      height: (80/40rem);
+
+      /*  border: 1px solid crimson;
+        box-sizing: border-box;*/
+
 
       //position: relative;
 
-      .icon {
-        margin-top: (3/40rem);
-        float: left;
+      img {
+        //position: absolute;
         width: (60/40rem);
         height: (60/40rem);
-
-        //position: relative;
-
-        img {
-          //position: absolute;
-          width: (50/40rem);
-          height: (50/40rem);
-          top: (2/40rem);
-        }
+        border-radius: 50%;
+        overflow: hidden;
+        //top: (2/40rem);
+        display: block;
       }
+    }
+
+    .msg-item-right {
+      float: left;
+
+      /*border: 1px solid skyblue;
+      box-sizing: border-box;*/
+
+      width: ((690-80)/40rem);
+      overflow: hidden;
+
 
       .nickname {
         //width: 315/40rem);
         //width: 180/40rem);
-        width: (330/40rem);
+        width: (450/40rem);
         height: (60/40rem);
         line-height: (60/40rem);
-        float: left;
 
 
         //padding-left: 5/40rem);
@@ -316,43 +344,63 @@ a {
         text-overflow: ellipsis;
         white-space: nowrap;
 
-        padding-left: (15/40rem);
-        color: #8E8E8E;
+        //padding-left: (15/40rem);
+        color: #333;
+
+        font-size: (30/40rem);
+        font-weight: bold;
 
 
         /*border: 1px solid crimson;
         box-sizing: border-box;*/
       }
 
-      .time {
-        //width: 125/40rem);
-        //height: 30/40rem);
+
+      .content {
+        //float: left;
+        margin-top: (10/40rem);
+        /*padding-right: (40/40rem);
+        margin-right: (40/40rem);*/
+        /*padding-left: 4/40rem);
+        padding-right: 4/40rem);
+        padding-top: 5/40rem);*/
+        width: 98%;
+        //height: auto;
+        font-size: (30/40rem);
+        color: #333;
+        //border: 1px solid #e0e0e0;
+        //margin-left: 10/40rem);
+
+        /*textarea {
+          outline: none;
+          resize: none;
+          border: none;
+          width: 342/40rem);
+          height: auto;
+        }*/
+      }
+
+      .msg-item-right-bottom {
+        margin-top: (20/40rem);
         font-size: (27/40rem);
-        line-height: (60/40rem);
-        float: right;
+
+        .time {
+          float: left;
+        }
+
+        .iconfont {
+          font-size: (30/40rem);
+          float: right;
+          margin-right: (20/40rem);
+        }
+
+        .icon-zanmianxing {
+          color: #ff6700;
+        }
+
       }
     }
 
-
-    .content {
-      //float: left;
-      margin-top: (15/40rem);
-      /*padding-left: 4/40rem);
-      padding-right: 4/40rem);
-      padding-top: 5/40rem);*/
-      width: 100%;
-      height: auto;
-      //border: 1px solid #e0e0e0;
-      //margin-left: 10/40rem);
-
-      /*textarea {
-        outline: none;
-        resize: none;
-        border: none;
-        width: 342/40rem);
-        height: auto;
-      }*/
-    }
 
   }
 
