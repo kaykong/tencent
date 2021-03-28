@@ -163,6 +163,7 @@ window.onload = function () {
         //获取昵称, 获取content
 
         let nickName = document.getElementById("nickname-input").value;
+        let contentDiv = document.getElementById("content-input");
         let content = document.getElementById("content-input").value;
         let nowTime = getNowTime();
         let imgUrl = "";
@@ -211,6 +212,7 @@ window.onload = function () {
         // firstMsgItem.parentNode.firstElementChild
         //在开头插入节点
         firstMsgItem.parentNode.insertBefore(newMsg, firstMsgItem);
+        contentDiv.value = "";
 
         let data = {
             "name": nickName,
