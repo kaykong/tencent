@@ -30,7 +30,6 @@ a {
 .project {
   width: 300px;
   margin: auto;
-  padding: 0 10px;
   box-sizing: border-box;
 }
 .project .project-list {
