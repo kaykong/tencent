@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@total-width: 750;
+@width: (693/40rem);
+@iconWidth: (60/40rem);
+@nickNameWidth: @width - @iconWidth - (10/40);//235px
+
+.w {
+  width: (693/40rem);
+  margin: 0 auto;
+}
+
+//设置根元素
+html {
+  // 设置rem的比值
+  font-size: (100vw/@total-width) * 40;
+  background-color: #fff;
+}
+
+input, textarea {
+  font-family: Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  color: #9a9a9a;
+  /*字间距*/
+  letter-spacing: 1px;
+}
+
+input {
+  color: #8E8E8E;
+}
+
+
+h1 {
+  //text-align: center;
+  //text-align: center;
+  //padding: (20/40rem) 0;
+  padding-top: (20/40rem);
+  padding-bottom: (30/40rem);
+  font-size: (40/40rem);
+}
+
+a {
+ /* font-size: (20/40rem);*/
+  color: #424242;
+  text-decoration: none;
+}
+
+.project:extend(.w) {
+
+  .project-list {
+    //margin-top: (20/40rem);
+
+    a {
+      width: 100%;
+      display: block;
+      text-align: center;
+      //color: #df5000;
+      border: 1px solid transparent;
+
+      span {
+        border-bottom: 1px solid #e0e0e0;
+        color: #424242;
+        font-size: (40/40rem);
+      }
+    }
+
+    /*.project-item {
+      margin-bottom: (20/40rem);
+    }*/
+
+  }
+}
+
+.message {
+  margin-top: (30/40rem);
+  //border: 1px solid salmon;
+  //box-sizing: border-box;
+  //width: @width;
+
+  .title {
+    color: #333;
+    font-size: (14/40rem);
+    margin-bottom: (10/40rem);
+  }
+
+
+  .header {
+    //width: 100%;
+    height: (80/40rem);
+    //box-sizing: border-box;
+    //border: 1px solid seagreen;
+    position: relative;
+
+    .icon {
+      //margin-top: (3/40rem);
+      float: left;
+      width: (60/40rem);
+      height: (60/40rem);
+      position: relative;
+
+      img {
+        position: absolute;
+        top: (10/40rem);
+        /*width: (26/40rem);
+        height: (26/40rem);*/
+        width: (50/40rem);
+        height: (50/40rem);
+        /*初始化时完全透明*/
+        opacity: 0;
+        /*过渡2s 图片由完全透明--> 不透明*/
+        transition: 1s;
+      }
+
+      .imgOn {
+        /*图片不透明*/
+        opacity: 1;
+      }
+
+      &:hover {
+        & + .changeIcon {
+          //opacity: 1;
+          height: (100/40rem);
+
+          //display: block;
+        }
+      }
+    }
+
+    .changeIcon {
+      position: absolute;
+      width: (100/40rem);
+      height: (0/40rem);
+      background-color: #df5000;
+      //display: none;
+      //opacity: 0;
+      &:hover {
+        //opacity: 1;
+        height: (100/40rem);
+
+        //display: block;
+      }
+    }
+
+    .nickname {
+      //width: 693;
+      float: right;
+      //padding-left: 5/40rem);
+      //border: 1px solid #e0e0e0;
+      //border: 1px solid skyblue;
+      box-sizing: border-box;
+      width: @nickNameWidth;
+      height: (80/40rem);
+
+      input {
+        //width: @nickNameWidth;
+        font-size: (38/40rem);
+        height: (80/40rem);
+        //line-height: (80/40rem);
+        width: 100%;
+        padding: 0 (10/40rem);
+        box-sizing: border-box;
+
+        border: 1px solid #e0e0e0;
+      }
+    }
+  }
+
+
+  .content:extend(.w) {
+    //float: left;
+    //width: @width;
+    margin-top: (15/40rem);
+    padding-left: (10/40rem);
+    padding-right: (10/40rem);
+    //padding-top: (10/40rem);
+
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    //margin-left: 10/40rem);
+
+    textarea {
+      font-size: (38/40rem);
+      outline: none;
+      resize: none;
+      border: none;
+      //width: @width;
+      width: 100%;
+      height: (120/40rem);
+    }
+  }
+
+  .addBtn:extend(.w) {
+    //float: right;
+
+    height: (80/40rem);
+    margin-top: (10/40rem);
+    line-height: (80/40rem);
+    text-align: center;
+    color: #9A9A9A;
+    //color: #f5f2f0;
+    background-color: #D3D3D3;
+    cursor: pointer;
+
+    /*&:hover {
+      color: #fff;
+      background-color: #9A9A9A;
+      //background-color: #df5000;
+
+    }*/
+  }
+
+  .addBtnMobile {
+    color: #fff;
+    background-color: #9A9A9A;
+  }
+
+
+  input {
+    //height: (30/40rem);
+    outline: none;
+    border: none;
+  }
+
+
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #BFBFBF;
+  }
+
+  input:-moz-placeholder, textarea:-moz-placeholder {
+    /* FF 4-18 */
+    color: #BFBFBF;
+  }
+
+  input::-moz-placeholder, textarea::-moz-placeholder {
+    /* FF 19+ */
+    color: #BFBFBF;
+  }
+
+  input:-ms-input-placeholder, .textarea:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #BFBFBF;
+  }
+
+}
+
+.message-list {
+  margin-top: (40/40rem);
+  //border: 1px solid salmon;
+
+  //position: absolute;
+  //top: 450/40rem);
+  //bottom: 0;
+  overflow: auto;
+
+  color: #9a9a9a;
+
+  &::after {
+    display: block;
+    text-align: center;
+    content: 'end';
+    font-size: (12/40rem);
+    height: (40/40rem);
+    line-height: (40/40rem);
+    margin-bottom: (20/40rem);
+    width: 100%;
+  }
+
+  .msg-item {
+
+    &::after {
+      content: '';
+      display: block;
+      width: 90%;
+      margin: 15px auto;
+      border-top: 1px solid #f6f6f6;
+      //margin-bottom: 10/40rem);
+    }
+
+    .header {
+      width: 100%;
+      height: (60/40rem);
+
+      //position: relative;
+
+      .icon {
+        margin-top: (3/40rem);
+        float: left;
+        width: (60/40rem);
+        height: (60/40rem);
+
+        //position: relative;
+
+        img {
+          //position: absolute;
+          width: (50/40rem);
+          height: (50/40rem);
+          top: (2/40rem);
+        }
+      }
+
+      .nickname {
+        //width: 315/40rem);
+        //width: 180/40rem);
+        width: (330/40rem);
+        height: (60/40rem);
+        line-height: (60/40rem);
+        float: left;
+
+
+        //padding-left: 5/40rem);
+        //border: 1px solid #e0e0e0;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        padding-left: (15/40rem);
+        color: #8E8E8E;
+
+
+        /*border: 1px solid crimson;
+        box-sizing: border-box;*/
+      }
+
+      .time {
+        //width: 125/40rem);
+        //height: 30/40rem);
+        font-size: (27/40rem);
+        line-height: (60/40rem);
+        float: right;
+      }
+    }
+
+
+    .content {
+      //float: left;
+      margin-top: (15/40rem);
+      /*padding-left: 4/40rem);
+      padding-right: 4/40rem);
+      padding-top: 5/40rem);*/
+      width: 100%;
+      height: auto;
+      //border: 1px solid #e0e0e0;
+      //margin-left: 10/40rem);
+
+      /*textarea {
+        outline: none;
+        resize: none;
+        border: none;
+        width: 342/40rem);
+        height: auto;
+      }*/
+    }
+
+  }
+
+}
