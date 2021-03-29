@@ -1,10 +1,12 @@
+var interfaceUrlPre = "https://service-6qcrvxv3-1305383279.sh.apigw.tencentcs.com/release/mongoDB?methodName=";
+
 var Ajax = {
     get: function (url, callback) {
         // XMLHttpRequest对象用于在后台与服务器交换数据
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, false);
-        xhr.setRequestHeader( 'Content-Type', 'application/json' );
-        xhr.setRequestHeader( 'Access-Control-Allow-Origin', '*');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
         xhr.withCredentials = false;
         xhr.onreadystatechange = function () {
             // readyState == 4说明请求已完成
@@ -44,11 +46,11 @@ var Ajax = {
 };
 
 var urlEncode = function (param, key, encode) {
-    if(param==null) return '';
+    if (param == null) return '';
     var paramStr = '';
     var t = typeof (param);
     if (t == 'string' || t == 'number' || t == 'boolean') {
-        paramStr += '&' + key + '=' + ((encode==null||encode) ? encodeURIComponent(param) : param);
+        paramStr += '&' + key + '=' + ((encode == null || encode) ? encodeURIComponent(param) : param);
     } else {
         for (var i in param) {
             var k = key == null ? i : key + (param instanceof Array ? '[' + i + ']' : '.' + i);
@@ -59,11 +61,14 @@ var urlEncode = function (param, key, encode) {
 };
 
 
-
 function showMessages(data) {
 
     data = JSON.parse(data);
-    // console.log("showMessages1", data);
+    console.log("showMessages1", data);
+
+    let agreeIdList = localStorage.agreeIdList;
+    console.log("showMessages", "agreeIdList", agreeIdList);
+
     // console.log("showMessages2", data.respCode);
     // console.log("showMessages3", data.body);
     if (data && data.respCode == 200 && data.body) {
@@ -75,6 +80,18 @@ function showMessages(data) {
             let newMsg = document.createElement("div");
             newMsg.className = "msg-item";
 
+
+            let iconSpanHtml =
+                "<span class=\"iconfont icon-zan2\" onclick=agree(this,'" + item._id + "')></span>\n";
+
+            if (item.count) {
+                if (agreeIdList && agreeIdList.indexOf(item._id) >= 0) {
+                    console.log("index", agreeIdList.indexOf(item._id))
+                    iconSpanHtml = "<span class=\"iconfont icon-zanmianxing\" onclick=agree(this,'" + item._id + "')>" + " " + item.count + "</span>\n";
+                } else {
+                    iconSpanHtml = "<span class=\"iconfont icon-zan2\" onclick=agree(this,'" + item._id + "')>" + " " + item.count + "</span>\n";
+                }
+            }
 
             newMsg.innerHTML =
                 "<div class=\"msg-item clearfix\">\n" +
@@ -92,7 +109,8 @@ function showMessages(data) {
                 "            <div class=\"time\">\n" +
                 "                " + item.createTime + "\n" +
                 "            </div>\n" +
-                "            <span class=\"iconfont icon-zan2\"></span>\n" +
+                iconSpanHtml +
+                // "            <span class=\"iconfont icon-zan2\" onclick=agree(this,'" + item._id + "')></span>\n" +
                 "        </div>\n" +
                 "    </div>\n" +
                 "</div>";
@@ -104,8 +122,93 @@ function showMessages(data) {
         msgListDiv.innerHTML = msgListInnerHtml;
     }
 
+}
+
+function agree(this_, id) {
+    // console.log(iconSpan)
+    let className = this_.className;
+
+    // console.log(this_.innerHTML)
+    let count = 0;
+    if (this_.innerHTML != "") {
+        count = parseInt(this_.innerHTML);
+    }
+
+    let agreeIdList = localStorage.agreeIdList;
+
+    // agreeIdList = "['1', '2']";
+    // agreeIdList = JSON.parse(agreeIdList);
+    // console.log(agreeIdList)
+    if (agreeIdList == null) {
+        // alert(null)
+        agreeIdList = "";
+    } else {
+        agreeIdList = agreeIdList.split(",");
+    }
 
 
+    let methodName = "agree";
+
+    // alert(className);
+
+    let agreeIdListNew = "";
+    if (className.indexOf("icon-zanmianxing") >= 0) {
+        //取消点赞
+        // alert("取消点赞");
+        methodName = "cancelAgree";
+        this_.className = "iconfont icon-zan2";
+        count--;
+        if (count > 0) {
+            this_.innerHTML = " " + count;
+        } else {
+            this_.innerHTML = "";
+        }
+        this_.style.animation = "none";
+
+
+        for (let i = 0; i < agreeIdList.length; i++) {
+            if (agreeIdList[i] != id) {
+                agreeIdListNew += agreeIdList[i] + ",";
+            }
+        }
+        //去掉末尾的逗号
+        agreeIdListNew = agreeIdListNew.substring(0, agreeIdListNew.length - 1);
+    } else {
+        //点赞
+        // alert("点赞")
+        this_.className = "iconfont icon-zanmianxing";
+        //animation: 1s bigAgree;
+        this_.style.animation = "1s bigAgree";
+        count++;
+        this_.innerHTML = " " + count;
+        //查找id是否已存在
+        let check = false;
+        for (let i = 0; i < agreeIdList.length; i++) {
+            if (agreeIdList[i] == id) {
+                check = true;
+            } else {
+                agreeIdListNew += agreeIdList[i] + ",";
+            }
+        }
+        if (!check) {
+            agreeIdListNew += id;
+        }
+    }
+    localStorage.agreeIdList = agreeIdListNew;
+
+    let data = {
+        id: id
+    }
+    Ajax.post(
+        interfaceUrlPre + methodName,
+        data,
+        function (data) {
+            console.log("Ajax.post." + methodName, data);
+            /*if (data) {
+                data = JSON.parse(data);
+            }*/
+        }, true);
+    // Ajax.post(interfaceUrlPre + "agree");
 }
 
 function getNowTime() {
@@ -164,9 +267,18 @@ window.onload = function () {
 
     let addBtn = document.getElementsByClassName("addBtn")[0];
 
+
     addBtn.onclick = function () {
 
+
         //获取昵称, 获取content
+        let loader = document.getElementsByClassName("loader")[0];
+        //loader.style.display = "block";
+
+
+        /*setTimeout(function () {
+            loader.style.display = "none";
+        }, 2000)*/
 
         let nickName = document.getElementById("nickname-input").value;
         let contentDiv = document.getElementById("content-input");
@@ -200,48 +312,62 @@ window.onload = function () {
         localStorage.nowTime = nowTime;
 
 
-        let firstMsgItem = document.getElementsByClassName("msg-item")[0];
-        let newMsg = document.createElement("div");
-        newMsg.className = "msg-item";
-        newMsg.innerHTML =
-            "<div class=\"msg-item clearfix\">\n" +
-            "    <div class=\"msg-item-left \">\n" +
-            "        <img class=\"imgOn\" src=\"" + imgUrl + "\" alt=\"\">\n" +
-            "    </div>\n" +
-            "    <div class=\"msg-item-right\">\n" +
-            "        <div class=\"nickname\">\n" +
-            "            " + nickName + "\n" +
-            "        </div>\n" +
-            "        <div class=\"content\">\n" +
-            "            " + content + "\n" +
-            "        </div>\n" +
-            "        <div class=\"msg-item-right-bottom\">\n" +
-            "            <div class=\"time\">\n" +
-            "                " + nowTime + "\n" +
-            "            </div>\n" +
-            "            <span class=\"iconfont icon-zan2\"></span>\n" +
-            "        </div>\n" +
-            "    </div>\n" +
-            "</div>";
-
-        // firstMsgItem.parentNode.firstElementChild
-        //在开头插入节点
-        firstMsgItem.parentNode.insertBefore(newMsg, firstMsgItem);
-        contentDiv.value = "";
-
         let data = {
             "name": nickName,
             "message": content,
             "createTime": nowTime,
             "imgUrl": imgUrl
         };
-
+        addBtn.disabled = "true";
+        this.innerHTML = "<div class=\"loader\"></div>";
         Ajax.post(
-            "https://service-6qcrvxv3-1305383279.sh.apigw.tencentcs.com/release/mongoDB?methodName=insertOneMessage",
+            interfaceUrlPre + "insertOneMessage",
             data,
             function (data) {
                 console.log("Ajax.post", data);
-            },true);
+
+                addBtn.innerHTML = "提交";
+                addBtn.disabled = "";
+
+                if (data) {
+                    data = JSON.parse(data);
+                }
+
+                if (data && data.respCode == 200 && data.body && data.body.insertedId) {
+                    let firstMsgItem = document.getElementsByClassName("msg-item")[0];
+                    let newMsg = document.createElement("div");
+                    newMsg.className = "msg-item";
+                    newMsg.innerHTML =
+                        "<div class=\"msg-item clearfix\">\n" +
+                        "    <div class=\"msg-item-left \">\n" +
+                        "        <img class=\"imgOn\" src=\"" + imgUrl + "\" alt=\"\">\n" +
+                        "    </div>\n" +
+                        "    <div class=\"msg-item-right\">\n" +
+                        "        <div class=\"nickname\">\n" +
+                        "            " + nickName + "\n" +
+                        "        </div>\n" +
+                        "        <div class=\"content\">\n" +
+                        "            " + content + "\n" +
+                        "        </div>\n" +
+                        "        <div class=\"msg-item-right-bottom\">\n" +
+                        "            <div class=\"time\">\n" +
+                        "                " + nowTime + "\n" +
+                        "            </div>\n" +
+                        "            <span class=\"iconfont icon-zan2\" onclick=agree(this,'" + data.body.insertedId + "')></span>\n" +
+                        "        </div>\n" +
+                        "    </div>\n" +
+                        "</div>";
+
+                    // firstMsgItem.parentNode.firstElementChild
+                    //在开头插入节点
+                    firstMsgItem.parentNode.insertBefore(newMsg, firstMsgItem);
+                    contentDiv.value = "";
+                } else {
+                    alert("提交失败了");
+                }
+
+
+            }, true);
 
     };
     /*addBtn.addEventListener("touchstart", function () {
@@ -256,5 +382,5 @@ window.onload = function () {
         this.className = "addBtn";
     }, false);*/
 
-    Ajax.get("https://service-6qcrvxv3-1305383279.sh.apigw.tencentcs.com/release/mongoDB?methodName=getAllMessage", showMessages)
+    Ajax.get(interfaceUrlPre + "getAllMessage", showMessages)
 };

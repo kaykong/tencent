@@ -36,7 +36,7 @@ input {
 }
 
 .clearfix::before,
-.clearfix::after{
+.clearfix::after {
   content: '';
   display: table;
   clear: both;
@@ -348,7 +348,7 @@ a {
         color: #333;
 
         //font-size: (30/40rem);
-        font-size: (33/40rem);
+        font-size: (32/40rem);
         font-weight: bold;
 
 
@@ -385,19 +385,36 @@ a {
       .msg-item-right-bottom {
         margin-top: (23/40rem);
         font-size: (27/40rem);
+        position: relative;
 
         .time {
           float: left;
         }
 
         .iconfont {
-          font-size: (35/40rem);
+          position: absolute;
+          top: (-10/40rem);
+          left: (500/40rem);
+          font-size: (33/40rem);
           float: right;
           margin-right: (20/40rem);
         }
 
         .icon-zanmianxing {
+          //position: absolute;
+          //float: right;
           color: #ff6700;
+          font-size: (33/40rem);
+          float: right;
+          margin-right: (20/40rem);
+          //left: (520/40rem);
+          //top: -12px;
+          z-index: 99;
+          //animation: bigAgree 1s linear infinite;
+
+          /*animation: 1s bigAgree;*/
+          //animation-name: bigAgree;
+          //animation-duration: 1s;
         }
 
       }
@@ -406,4 +423,59 @@ a {
 
   }
 
+}
+
+.loader-wrapper {
+  position: absolute;
+  background-color: rgba(0, 0, 0, .2);
+  //opacity: .4;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+
+.loader {
+  border: (10/40rem) solid #f3f3f3;
+  border-radius: 50%;
+  border-top: (10/40rem) solid #ff6700;
+  width: (30/40rem);
+  height: (30/40rem);
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: (15/40rem);
+}
+
+/*.loader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}*/
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes bigAgree {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
 }
