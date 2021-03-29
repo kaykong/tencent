@@ -232,20 +232,20 @@ a {
   text-overflow: ellipsis;
   white-space: nowrap;
   color: #333;
-  font-size: 0.75rem;
+  font-size: 0.825rem;
   font-weight: bold;
   /*border: 1px solid crimson;
         box-sizing: border-box;*/
 }
 .message-list .msg-item .msg-item-right .content {
-  margin-top: 0.25rem;
+  margin-top: 0.325rem;
   /*padding-right: (40/40rem);
         margin-right: (40/40rem);*/
   /*padding-left: 4/40rem);
         padding-right: 4/40rem);
         padding-top: 5/40rem);*/
   width: 98%;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: #333;
   /*textarea {
           outline: none;
@@ -256,14 +256,14 @@ a {
         }*/
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom {
-  margin-top: 0.5rem;
+  margin-top: 0.575rem;
   font-size: 0.675rem;
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom .time {
   float: left;
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom .iconfont {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   float: right;
   margin-right: 0.5rem;
 }

@@ -10,7 +10,7 @@ var Ajax = {
             // readyState == 4说明请求已完成
             if (xhr.readyState == 4) {
                 if (xhr.status == 200 || xhr.status == 304) {
-                    console.log("Ajax.get", xhr.responseText);
+                    // console.log("Ajax.get", xhr.responseText);
                     callback(xhr.responseText);
                 }
             }
@@ -63,9 +63,9 @@ var urlEncode = function (param, key, encode) {
 function showMessages(data) {
 
     data = JSON.parse(data);
-    console.log("showMessages1", data);
-    console.log("showMessages2", data.respCode);
-    console.log("showMessages3", data.body);
+    // console.log("showMessages1", data);
+    // console.log("showMessages2", data.respCode);
+    // console.log("showMessages3", data.body);
     if (data && data.respCode == 200 && data.body) {
         //调用成功
         let msgListInnerHtml = "";
@@ -98,7 +98,7 @@ function showMessages(data) {
                 "</div>";
             msgListInnerHtml += newMsg.outerHTML;
         }
-        console.log("msgListInnerHtml", msgListInnerHtml);
+        // console.log("msgListInnerHtml", msgListInnerHtml);
 
         let msgListDiv = document.getElementsByClassName("message-list")[0];
         msgListDiv.innerHTML = msgListInnerHtml;
@@ -130,6 +130,12 @@ function getNowTime() {
 }
 
 window.onload = function () {
+
+    console.log("localStorage");
+    console.log(localStorage.name);
+    console.log(localStorage.content);
+    console.log(localStorage.nowTime);
+
 
     let imgListDiv = document.getElementsByClassName("icon")[0];
     let imgList = imgListDiv.getElementsByTagName("img");
@@ -183,6 +189,15 @@ window.onload = function () {
             alert("请填写留言");
             return;
         }
+
+        if (localStorage.content == content) {
+            alert("换句话呗");
+            return;
+        }
+
+        localStorage.name = nickName;
+        localStorage.content = content;
+        localStorage.nowTime = nowTime;
 
 
         let firstMsgItem = document.getElementsByClassName("msg-item")[0];
