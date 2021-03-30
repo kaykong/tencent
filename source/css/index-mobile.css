@@ -118,6 +118,8 @@ a {
 }
 .message .header .nickname input {
   font-size: 0.95rem;
+  font-size: 0.8rem;
+  color: #333;
   height: 2rem;
   width: 100%;
   padding: 0 0.25rem;
@@ -133,6 +135,8 @@ a {
 }
 .message .content textarea {
   font-size: 0.95rem;
+  font-size: 0.8rem;
+  color: #333;
   outline: none;
   resize: none;
   border: none;
@@ -275,13 +279,14 @@ a {
   left: 12.5rem;
   font-size: 0.825rem;
   float: right;
-  margin-right: 0.5rem;
+}
+.message-list .msg-item .msg-item-right .msg-item-right-bottom .iconfont span {
+  font-size: 0.7rem;
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom .icon-zanmianxing {
   color: #ff6700;
   font-size: 0.825rem;
   float: right;
-  margin-right: 0.5rem;
   z-index: 99;
   /*animation: 1s bigAgree;*/
 }
