@@ -82,7 +82,7 @@ function showMessages(data) {
 
 
             let iconSpanHtml =
-                "<span class=\"iconfont icon-zan2\" onclick=agree(this,'" + item._id + "')></span>\n";
+                "<span class=\"iconfont icon-zan2\" onclick=agree(this,'" + item._id + "')><span></span></span>\n";
 
             if (item.count && item.count > 0) {
                 if (agreeIdList && agreeIdList.indexOf(item._id) >= 0) {
@@ -129,9 +129,11 @@ function agree(this_, id) {
     let className = this_.className;
 
     // console.log(this_.innerHTML)
+    let agreeCountHtml = this_.getElementsByTagName("span")[0]; //点赞数html
     let count = 0;
-    if (this_.innerHTML != "") {
-        count = parseInt(this_.innerHTML);
+    if (agreeCountHtml.innerHTML != "") {
+        count = parseInt(agreeCountHtml.innerHTML);
+        // console.log("count", count)
     }
 
     let agreeIdList = localStorage.agreeIdList;
@@ -161,9 +163,9 @@ function agree(this_, id) {
         if (count > 0) {
             // "<span> "+count+"</span>"
             // this_.innerHTML = " " + count;
-            this_.innerHTML = "<span> " + count + "</span>"
+            this_.innerHTML = "<span> " + count + "</span>";
         } else {
-            this_.innerHTML = "";
+            this_.innerHTML = "<span></span>";
         }
         this_.style.animation = "none";
 
@@ -182,7 +184,7 @@ function agree(this_, id) {
         //animation: 1s bigAgree;
         this_.style.animation = "1s bigAgree";
         count++;
-        this_.innerHTML = " " + count;
+        this_.innerHTML = "<span> " + count + "</span>";
         //查找id是否已存在
         let check = false;
         for (let i = 0; i < agreeIdList.length; i++) {
@@ -326,7 +328,7 @@ window.onload = function () {
             interfaceUrlPre + "insertOneMessage",
             data,
             function (data) {
-                console.log("Ajax.post", data);
+                // console.log("Ajax.post", data);
 
                 addBtn.innerHTML = "提交";
                 addBtn.disabled = "";
