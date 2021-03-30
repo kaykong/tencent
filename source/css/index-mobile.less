@@ -4,6 +4,7 @@
 }
 
 @total-width: 750;
+@pc-total-width: 2550;
 @width: (693/40rem);
 @iconWidth: (60/40rem);
 @nickNameWidth: @width - @iconWidth - (10/40); //235px
@@ -18,6 +19,14 @@ html {
   // 设置rem的比值
   font-size: (100vw/@total-width) * 40;
   background-color: #fff;
+}
+
+@media (min-width: 990px) {
+  html {
+    // 设置rem的比值
+    font-size: (100vw/@pc-total-width) * 40;
+    background-color: #fff;
+  }
 }
 
 body {

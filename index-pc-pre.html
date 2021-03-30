@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--原文链接：https://blog.csdn.net/xlei1123/article/details/52535168-->
+    <!--禁止手机浏览器缓存-->
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+
+
+    <link rel="stylesheet" href="source/css/index.css">
+    <title>个人网站</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="source/js/index.js"></script>
+    <!-- <script>
+         // 为给定 ID 的 user 创建请求
+         axios.get('https://service-6qcrvxv3-1305383279.sh.apigw.tencentcs.com/release/mongoDB?methodName=getAllMessage')
+             .then(function (response) {
+                 console.log(response);
+             })
+             .catch(function (error) {
+                 console.log(error);
+             });
+     </script>-->
+
+    <script>
+
+        let sUserAgent = navigator.userAgent.toLowerCase();
+        let bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        let bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        let bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        let bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        let bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        let bIsAndroid = sUserAgent.match(/android/i) == "android";
+        let bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        let bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            //手机
+            // document.writeln("phone");
+            // document.writeln(location);
+            // document.writeln(location.toString().indexOf("/"));
+
+            window.location.href = "/kongkk/index-mobile.html"
+        } else {
+            //pc
+            // document.writeln("pc");
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="project">
+    <h1>个人练习项目</h1>
+    <div class="project-list">
+        <div class="xiaomi">
+
+            <a href="./project/xiaomi/index.html">
+
+                <img src="./source/img/project/xiaomi.png" alt="" width="100%">
+                <span>小米商城首页</span>
+
+            </a>
+        </div>
+    </div>
+
+    <div class="message">
+        <!--        <div class="title">留言板</div>-->
+        <div class="header">
+            <div class="icon">
+                <img src="./source/img/msg/img001.jpg" alt="" width="26" height="26">
+                <img class="imgOn" src="./source/img/msg/img002.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img003.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img004.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img005.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img006.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img007.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img008.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img009.jpg" alt="" width="26" height="26">
+                <img src="./source/img/msg/img010.jpg" alt="" width="26" height="26">
+            </div>
+            <!--<div class="changeIcon">
+            </div>-->
+            <div class="nickname">
+                <input type="text" id="nickname-input" placeholder="昵称">
+            </div>
+        </div>
+
+        <div class="content">
+            <textarea name="" id="content-input" cols="" rows="" placeholder="留言板"></textarea>
+        </div>
+
+        <div class="addBtn">提交</div>
+    </div>
+
+    <div class="message-list">
+
+        <div class="msg-item">
+            <div class="header">
+                <div class="icon">
+                    <img class="imgOn" src="./source/img/msg/img002.jpg" alt="" width="26" height="26">
+                </div>
+
+                <div class="nickname">
+                    我是昵称
+                </div>
+
+                <div class="time">
+                    2021-03-27 16:30:20
+                </div>
+            </div>
+
+            <div class="content">
+                Gitee.com(码云) 是 OSCHINA.NET 推出的代码托管平台,支持 Git 和 SVN,提供免费的私有仓库托管。目前已有超过 600 万的开发者选择 Gitee。
+            </div>
+        </div>
+
+        <div class="msg-item">
+            <div class="header">
+                <div class="icon">
+                    <img class="imgOn" src="./source/img/msg/img002.jpg" alt="" width="26" height="26">
+                </div>
+
+                <div class="nickname">
+                    我是昵称
+                </div>
+
+                <div class="time">
+                    2021-03-27 16:30:20
+                </div>
+            </div>
+
+            <div class="content">
+                Gitee.com(码云) 是 OSCHINA.NET 推出的代码托管平台,支持 Git 和 SVN,提供免费的私有仓库托管。目前已有超过 600 万的开发者选择 Gitee。
+            </div>
+        </div>
+
+        <div class="msg-item">
+            <div class="header">
+                <div class="icon">
+                    <img class="imgOn" src="./source/img/msg/img002.jpg" alt="" width="26" height="26">
+                </div>
+
+                <div class="nickname">
+                    我是昵称
+                </div>
+
+                <div class="time">
+                    2021-03-27 16:30:20
+                </div>
+            </div>
+
+            <div class="content">
+                Gitee.com(码云) 是 OSCHINA.NET 推出的代码托管平台,支持 Git 和 SVN,提供免费的私有仓库托管。目前已有超过 600 万的开发者选择 Gitee。
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

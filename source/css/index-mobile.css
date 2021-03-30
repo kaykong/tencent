@@ -13,6 +13,12 @@ html {
   font-size: 5.33333333vw;
   background-color: #fff;
 }
+@media (min-width: 990px) {
+  html {
+    font-size: 1.56862745vw;
+    background-color: #fff;
+  }
+}
 body {
   font-family: Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
 }
