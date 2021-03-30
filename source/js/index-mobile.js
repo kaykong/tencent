@@ -84,12 +84,12 @@ function showMessages(data) {
             let iconSpanHtml =
                 "<span class=\"iconfont icon-zan2\" onclick=agree(this,'" + item._id + "')></span>\n";
 
-            if (item.count) {
+            if (item.count && item.count > 0) {
                 if (agreeIdList && agreeIdList.indexOf(item._id) >= 0) {
-                    console.log("index", agreeIdList.indexOf(item._id))
-                    iconSpanHtml = "<span class=\"iconfont icon-zanmianxing\" onclick=agree(this,'" + item._id + "')>" + " " + item.count + "</span>\n";
+                    // console.log("index", agreeIdList.indexOf(item._id))
+                    iconSpanHtml = "<span class=\"iconfont icon-zanmianxing\" onclick=agree(this,'" + item._id + "')>" + "<span> " + item.count + "</span>" + "</span>\n";
                 } else {
-                    iconSpanHtml = "<span class=\"iconfont icon-zan2\" onclick=agree(this,'" + item._id + "')>" + " " + item.count + "</span>\n";
+                    iconSpanHtml = "<span class=\"iconfont icon-zan2\" onclick=agree(this,'" + item._id + "')>" + "<span> " + item.count + "</span>" + "</span>\n";
                 }
             }
 
@@ -159,7 +159,9 @@ function agree(this_, id) {
         this_.className = "iconfont icon-zan2";
         count--;
         if (count > 0) {
-            this_.innerHTML = " " + count;
+            // "<span> "+count+"</span>"
+            // this_.innerHTML = " " + count;
+            this_.innerHTML = "<span> " + count + "</span>"
         } else {
             this_.innerHTML = "";
         }
@@ -370,17 +372,7 @@ window.onload = function () {
             }, true);
 
     };
-    /*addBtn.addEventListener("touchstart", function () {
-        this.className = "addBtn addBtnMobile";
-    }, false);
 
-    addBtn.addEventListener("touchmove", function () {
-        this.className = "addBtn addBtnMobile";
-    }, false);
-
-    addBtn.addEventListener("touchend", function () {
-        this.className = "addBtn";
-    }, false);*/
 
     Ajax.get(interfaceUrlPre + "getAllMessage", showMessages)
 };
