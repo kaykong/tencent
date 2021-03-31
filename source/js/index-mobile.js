@@ -360,7 +360,7 @@ window.onload = function () {
                         "            <div class=\"time\">\n" +
                         "                " + nowTime + "\n" +
                         "            </div>\n" +
-                        "            <span class=\"iconfont icon-zan2\" onclick=agree(this,'" + data.body.insertedId + "')></span>\n" +
+                        "            <span class=\"iconfont icon-zan2\" onclick=agree(this,'" + data.body.insertedId + "')><span></span></span>\n" +
                         "        </div>\n" +
                         "    </div>\n" +
                         "</div>";
