@@ -4,7 +4,7 @@ var Ajax = {
     get: function (url, callback) {
         // XMLHttpRequest对象用于在后台与服务器交换数据
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', url, false);
+        xhr.open('GET', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
         xhr.withCredentials = false;
