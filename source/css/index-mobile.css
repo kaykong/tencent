@@ -299,7 +299,7 @@ a {
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom .iconfont {
   position: absolute;
-  bottom: 0.1rem;
+  bottom: 2px;
   right: 0.4rem;
   font-size: 0.825rem;
   float: right;
