@@ -1,10 +1,13 @@
 var interfaceUrlPre = "https://service-6qcrvxv3-1305383279.sh.apigw.tencentcs.com/release/mongoDB?methodName=";
 
 var Ajax = {
-    get: function (url, callback) {
+    get: function (url, callback, async) {
         // XMLHttpRequest对象用于在后台与服务器交换数据
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', url, true);
+        if (!async) {
+            async = false;
+        }
+        xhr.open('GET', url, async);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
         xhr.withCredentials = false;
@@ -376,5 +379,5 @@ window.onload = function () {
     };
 
 
-    Ajax.get(interfaceUrlPre + "getAllMessage", showMessages)
+    Ajax.get(interfaceUrlPre + "getAllMessage", showMessages, true);
 };
