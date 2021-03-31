@@ -186,6 +186,30 @@ a {
   /* IE 10+ */
   color: #BFBFBF;
 }
+.message-list-title {
+  height: 1.5rem;
+  margin-top: 0.75rem;
+}
+.message-list-title .title {
+  font-size: 0.75rem;
+  color: #333;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  float: left;
+}
+.message-list-title .sort {
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  color: #D3D3D3;
+  float: right;
+}
+.message-list-title .sort span {
+  margin-right: 0.375rem;
+}
+.message-list-title .sortOn {
+  color: #333;
+}
 .message-list {
   margin-top: 1rem;
   overflow: auto;
