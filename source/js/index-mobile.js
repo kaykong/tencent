@@ -110,7 +110,7 @@ function showMessages(data) {
                 "        </div>\n" +
                 "        <div class=\"msg-item-right-bottom\">\n" +
                 "            <div class=\"time\">\n" +
-                "                " + item.createTime + "\n" +
+                "                " + DateTimeUtil.getFormatDate(item.createTime) + "\n" +
                 "            </div>\n" +
                 iconSpanHtml +
                 // "            <span class=\"iconfont icon-zan2\" onclick=agree(this,'" + item._id + "')></span>\n" +
@@ -218,26 +218,6 @@ function agree(this_, id) {
     // Ajax.post(interfaceUrlPre + "agree");
 }
 
-function getNowTime() {
-    let date = new Date();
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-
-    function getFull(data) {
-        if (data < 10) {
-            data = "0" + data;
-        }
-        return data;
-    }
-
-    let time = year + "-" + getFull(month) + "-" + getFull(day) + " " + getFull(hours) + ":" + getFull(minutes) + ":" + getFull(seconds);
-    return time;
-}
 
 window.onload = function () {
 
@@ -290,7 +270,7 @@ window.onload = function () {
         let nickName = document.getElementById("nickname-input").value;
         let contentDiv = document.getElementById("content-input");
         let content = document.getElementById("content-input").value;
-        let nowTime = getNowTime();
+        let nowTime = DateTimeUtil.getNowTime();
         let imgUrl = "";
         if (imgIndex < 10) {
             imgUrl = "./source/img/msg/img00" + imgIndex + ".jpg";
@@ -358,7 +338,7 @@ window.onload = function () {
                         "        </div>\n" +
                         "        <div class=\"msg-item-right-bottom\">\n" +
                         "            <div class=\"time\">\n" +
-                        "                " + nowTime + "\n" +
+                        "                " + DateTimeUtil.getFormatDate(nowTime) + "\n" +
                         "            </div>\n" +
                         "            <span class=\"iconfont icon-zan2\" onclick=agree(this,'" + data.body.insertedId + "')><span></span></span>\n" +
                         "        </div>\n" +
