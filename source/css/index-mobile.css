@@ -293,16 +293,17 @@ a {
   margin-top: 0.575rem;
   font-size: 0.675rem;
   position: relative;
+  height: 1.125rem;
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom .time {
   float: left;
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom .iconfont {
-  position: absolute;
   bottom: 1px;
   right: 0.4rem;
   font-size: 0.825rem;
   float: right;
+  margin-right: 0.35rem;
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom .iconfont span {
   position: relative;
