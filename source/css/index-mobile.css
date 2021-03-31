@@ -299,13 +299,15 @@ a {
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom .iconfont {
   position: absolute;
-  top: -0.25rem;
-  left: 12.5rem;
+  right: 0.4rem;
   font-size: 0.825rem;
   float: right;
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom .iconfont span {
+  position: relative;
+  float: left;
   font-size: 0.7rem;
+  right: 0.2rem;
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom .icon-zanmianxing {
   color: #ff6700;
