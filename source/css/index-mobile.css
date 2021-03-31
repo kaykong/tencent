@@ -308,7 +308,8 @@ a {
   position: relative;
   float: left;
   font-size: 0.7rem;
-  right: 0.2rem;
+  right: 0.225rem;
+  top: 2px;
 }
 .message-list .msg-item .msg-item-right .msg-item-right-bottom .icon-zanmianxing {
   color: #ff6700;
