@@ -36,6 +36,9 @@ var Ajax = {
         xhr.open('POST', url, async);
         // 添加http头，发送信息至服务器时内容编码类型
         xhr.setRequestHeader('Content-Type', 'application/json');
+
+        // xhr.responseType = "json"; //自动将获取到的响应信息转换为json格式
+
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200 || xhr.status == 304) {
@@ -226,6 +229,10 @@ window.onload = function () {
     console.log(localStorage.content);
     console.log(localStorage.nowTime);
 
+    if (localStorage.name) {
+        document.getElementById("nickname-input").value = localStorage.name;
+    }
+
 
     let imgListDiv = document.getElementsByClassName("icon")[0];
     let imgList = imgListDiv.getElementsByTagName("img");
@@ -234,6 +241,9 @@ window.onload = function () {
         imgList[i].className = "";
     }
     let imgIndex = parseInt(Math.random() * imgList.length, 10) + 1;//生成 [1, imgList.length] 的随机数
+    if (localStorage.imgIndex) {
+        imgIndex = localStorage.imgIndex;
+    }
     imgList[imgIndex - 1].className = "imgOn";
 
     /*let changeIcon = document.getElementsByClassName("changeIcon")[0];
@@ -297,6 +307,7 @@ window.onload = function () {
         localStorage.name = nickName;
         localStorage.content = content;
         localStorage.nowTime = nowTime;
+        localStorage.imgIndex = imgIndex;
 
 
         let data = {
