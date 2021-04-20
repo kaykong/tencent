@@ -1,0 +1,10 @@
+npm init -y
+使用npm构建
+
+npm i express
+安装express框架
+
+
+cnpm install -g nodemon
+nodemon server.js
+//改动代码不用重启服务

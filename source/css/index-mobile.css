@@ -281,6 +281,7 @@ a {
   width: 98%;
   font-size: 0.8rem;
   color: #333;
+  word-wrap: break-word;
   /*textarea {
           outline: none;
           resize: none;
