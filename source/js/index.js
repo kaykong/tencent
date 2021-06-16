@@ -216,5 +216,5 @@ window.onload = function () {
         this.className = "addBtn";
     }, false);*/
 
-    Ajax.get("https://service-6qcrvxv3-1305383279.sh.apigw.tencentcs.com/release/mongoDB?methodName=getAllMessage", showMessages)
+    Ajax.get("https://service-6qcrvxv3-1305383279.sh.apigw.tencentcs.com/release/mongoDB?methodName=getMessageByPage&pageNum=0&limitNum=20", showMessages)
 };

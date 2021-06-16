@@ -214,16 +214,18 @@ a {
   margin-top: 1rem;
   overflow: auto;
   color: #9a9a9a;
-}
-.message-list::after {
-  display: block;
-  text-align: center;
-  content: 'end';
-  font-size: 0.675rem;
-  height: 1rem;
-  line-height: 1rem;
-  margin-bottom: 0.5rem;
-  width: 100%;
+  /*&::after {
+    display: block;
+    text-align: center;
+    content: 'end';
+    font-size: (27/40rem);
+    height: (40/40rem);
+    line-height: (40/40rem);
+    margin-bottom: (20/40rem);
+    width: 100%;
+    //给最后的伪类添加click
+    //pointer-events:auto;
+  }*/
 }
 .message-list .msg-item {
   /*&::after {
@@ -319,6 +321,17 @@ a {
   float: right;
   z-index: 99;
   /*animation: 1s bigAgree;*/
+}
+.end {
+  color: #9a9a9a;
+  display: block;
+  text-align: center;
+  content: 'end';
+  font-size: 0.675rem;
+  height: 1rem;
+  line-height: 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
 }
 .loader-wrapper {
   position: absolute;

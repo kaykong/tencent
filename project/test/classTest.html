@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试class</title>
+</head>
+<body>
+<script>
+    class Person {
+        constructor(name, age) {
+            this.name = name
+            age = this.age
+        }
+
+        state = {a: 1}
+
+        speak = () => {
+            console.log(this.state)
+        }
+    }
+
+    class Stu extends Person {
+
+    }
+
+    let stu = new Stu()
+    console.log(stu)
+    new Person().speak()
+
+    console.log(Person.prototype.speak())
+</script>
+</body>
+</html>

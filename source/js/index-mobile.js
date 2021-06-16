@@ -125,9 +125,18 @@ function showMessages(data) {
         // console.log("msgListInnerHtml", msgListInnerHtml);
 
         let msgListDiv = document.getElementsByClassName("message-list")[0];
-        msgListDiv.innerHTML = msgListInnerHtml;
-    }
+        msgListDiv.innerHTML += msgListInnerHtml;
 
+        let endDiv = document.getElementsByClassName("end")[0];
+        let pageNum = endDiv.getAttribute("pageNum");
+        endDiv.setAttribute("pageNum", parseInt(pageNum) + 1)
+        // console.log("pageNum" + pageNum);
+
+        if (data.body.length < 20) {
+            endDiv.innerHTML = "end";
+            endDiv.removeAttribute("onclick");
+        }
+    }
 }
 
 function agree(this_, id) {
@@ -219,6 +228,12 @@ function agree(this_, id) {
             }*/
         }, true);
     // Ajax.post(interfaceUrlPre + "agree");
+}
+
+function loadMessages() {
+    let endDiv = document.getElementsByClassName("end")[0];
+    let pageNum = endDiv.getAttribute("pageNum");
+    Ajax.get(interfaceUrlPre + "getMessageByPage&pageNum="+pageNum+"&limitNum=20", showMessages, true);
 }
 
 
@@ -370,5 +385,6 @@ window.onload = function () {
     };
 
 
-    Ajax.get(interfaceUrlPre + "getAllMessage", showMessages, true);
+    // Ajax.get(interfaceUrlPre + "getAllMessage", showMessages, true);
+    Ajax.get(interfaceUrlPre + "getMessageByPage&pageNum=0&limitNum=20", showMessages, true);
 };

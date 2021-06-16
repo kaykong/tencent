@@ -319,8 +319,10 @@ a {
   overflow: auto;
 
   color: #9a9a9a;
+  //给最后的伪类添加click
+  //pointer-events: none;
 
-  &::after {
+  /*&::after {
     display: block;
     text-align: center;
     content: 'end';
@@ -329,7 +331,9 @@ a {
     line-height: (40/40rem);
     margin-bottom: (20/40rem);
     width: 100%;
-  }
+    //给最后的伪类添加click
+    //pointer-events:auto;
+  }*/
 
   .msg-item {
 
@@ -487,6 +491,22 @@ a {
 
   }
 
+
+
+}
+
+.end {
+  color: #9a9a9a;
+  display: block;
+  text-align: center;
+  content: 'end';
+  font-size: (27/40rem);
+  height: (40/40rem);
+  line-height: (40/40rem);
+  margin-bottom: (20/40rem);
+  width: 100%;
+  //给最后的伪类添加click
+  //pointer-events:auto;
 }
 
 .loader-wrapper {
