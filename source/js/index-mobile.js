@@ -314,6 +314,11 @@ window.onload = function () {
             return;
         }
 
+        if (content.length > 150) {
+            alert("你搁这写作文呢?");
+            return;
+        }
+
         if (localStorage.content == content) {
             alert("换句话呗");
             return;
