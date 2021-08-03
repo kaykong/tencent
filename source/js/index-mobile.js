@@ -77,7 +77,7 @@ function showMessages(data) {
 
     // console.log("showMessages2", data.respCode);
     // console.log("showMessages3", data.body);
-    if (data && data.respCode == 200 && data.body) {
+    if (data && data.body) {
         //调用成功
         let msgListInnerHtml = "";
         for (let i = 0; i < data.body.length; i++) {
@@ -346,7 +346,7 @@ window.onload = function () {
                     data = JSON.parse(data);
                 }
 
-                if (data && data.respCode == 200 && data.body && data.body.insertedId) {
+                if (data && data.body && data.body.insertedId) {
                     let firstMsgItem = document.getElementsByClassName("msg-item")[0];
                     let newMsg = document.createElement("div");
                     newMsg.className = "msg-item";
