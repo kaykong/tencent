@@ -48,11 +48,6 @@ a {
   color: #424242;
   text-decoration: none;
 }
-.project .project-list {
-  /*.project-item {
-      margin-bottom: (20/40rem);
-    }*/
-}
 .project .project-list a {
   width: 100%;
   display: block;
@@ -63,6 +58,9 @@ a {
   border-bottom: 1px solid #e0e0e0;
   color: #424242;
   font-size: 0.75rem;
+}
+.project .project-list .project-item {
+  margin-bottom: 1rem;
 }
 .message {
   margin-top: 0.75rem;
