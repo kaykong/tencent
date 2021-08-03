@@ -309,13 +309,14 @@ window.onload = function () {
             return;
         }
 
+        content = content.trim();
         if (content == "") {
             alert("请填写留言");
             return;
         }
 
-        if (content.length > 150) {
-            alert("你搁这写作文呢?");
+        if (content.length > 50) {
+            alert("你搁这写作文呢? (⊙ˍ⊙) ");
             return;
         }
 
