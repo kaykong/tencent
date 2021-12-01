@@ -109,9 +109,7 @@ function showMessages(data) {
                 "            " + item.name + "\n" +
                 "        </div>\n" +
                 "        <div class=\"content\">\n" +
-                "        <pre>\n" +
                 "            " + item.message + "\n" +
-                "        </pre>\n" +
                 "        </div>\n" +
                 "        <div class=\"msg-item-right-bottom\">\n" +
                 "            <div class=\"time\">\n" +
