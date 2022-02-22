@@ -732,7 +732,7 @@ module.exports = function (webpackEnv) {
             infrastructure: 'silent',
           },
         }),
-      !disableESLintPlugin &&
+      /*!disableESLintPlugin &&
         new ESLintPlugin({
           // Plugin options
           extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
@@ -756,7 +756,7 @@ module.exports = function (webpackEnv) {
               }),
             },
           },
-        }),
+        }),*/
     ].filter(Boolean),
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
