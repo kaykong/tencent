@@ -109,7 +109,7 @@ function showMessages(data) {
                 "            " + item.name + "\n" +
                 "        </div>\n" +
                 "        <div class=\"content\">\n" +
-                "            " + item.message + "\n" +
+                "            " + getContent(item.message) + "\n" +
                 "        </div>\n" +
                 "        <div class=\"msg-item-right-bottom\">\n" +
                 "            <div class=\"time\">\n" +
@@ -234,6 +234,14 @@ function loadMessages() {
     let endDiv = document.getElementsByClassName("end")[0];
     let pageNum = endDiv.getAttribute("pageNum");
     Ajax.get(interfaceUrlPre + "getMessageByPage&pageNum="+pageNum+"&limitNum=20", showMessages, true);
+}
+
+function getContent(content) {
+    if(content && content.indexOf("<") !== -1 && content.indexOf(">") !== -1) {
+        return "好强啊"
+    } else {
+        return content
+    }
 }
 
 
@@ -366,7 +374,7 @@ window.onload = function () {
                         "            " + nickName + "\n" +
                         "        </div>\n" +
                         "        <div class=\"content\">\n" +
-                        "            " + content + "\n" +
+                        "            " + getContent(content) + "\n" +
                         "        </div>\n" +
                         "        <div class=\"msg-item-right-bottom\">\n" +
                         "            <div class=\"time\">\n" +
