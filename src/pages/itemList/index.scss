@@ -1,20 +1,33 @@
+$inputWrapperHeight: 120px;
+
 .item-list-wrapper {
   height: 100vh;
   background: #f5f7fa;
 
   .search-input-wrapper {
     width: 600px;
-    height: 100px;
+    height: $inputWrapperHeight;
     margin-left: auto;
     margin-right: auto;
     //background: aquamarine;
     overflow:hidden;
 
     .search-input {
-      margin-top: 10px;
+      margin-top: ($inputWrapperHeight - 80px) / 2;
+      //margin-top: 20px;
       --height: 80px;
       --border-radius: 40px;
       --background: #fff;
+    }
+
+    .adm-search-bar .adm-search-bar-input-box .adm-search-bar-input .adm-input-element {
+      font-size: 32px;
+      line-height: 32px;
+    }
+    .adm-search-bar .adm-search-bar-input-box .adm-search-bar-input-box-icon {
+      font-size: 38px;
+      line-height: 38px;
+      margin-top: 4px;
     }
   }
 
@@ -22,7 +35,7 @@
     //background: #7d4fa7;
     position: absolute;
     width: 100%;
-    top: 100px;
+    top: $inputWrapperHeight;
     bottom: 0;
 
     .adm-list-item-description {
