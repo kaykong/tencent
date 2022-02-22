@@ -1,21 +1,12 @@
 import React from "react";
 import { HashRouter } from 'react-router-dom';
 import { Route,Navigate, Routes } from 'react-router';
-
-// import { ListByModuleId } from '../pages'
+import ItemList from "../pages/itemList/ItemList";
 
 const MyTest = () => {
     return (
         <div>
             我的测试页面
-        </div>
-    )
-}
-
-const ItemList = () => {
-    return (
-        <div>
-            我的ItemList页面
         </div>
     )
 }

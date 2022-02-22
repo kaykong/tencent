@@ -1,0 +1,32 @@
+.item-list-wrapper {
+  height: 100vh;
+  background: #f5f7fa;
+
+  .search-input-wrapper {
+    width: 600px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    //background: aquamarine;
+    overflow:hidden;
+
+    .search-input {
+      margin-top: 10px;
+      --height: 80px;
+      --border-radius: 40px;
+      --background: #fff;
+    }
+  }
+
+  .list-wrapper {
+    //background: #7d4fa7;
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    bottom: 0;
+
+    .adm-list-item-description {
+      margin-top: 10px;
+    }
+  }
+}
