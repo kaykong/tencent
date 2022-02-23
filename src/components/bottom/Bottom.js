@@ -1,6 +1,8 @@
 import {TabBar} from "antd-mobile";
 import {useLocation, useNavigate} from "react-router";
 import {useEffect, useState} from "react";
+import {Icon} from "../icon/icon";
+import './index.scss'
 
 const Bottom = () => {
     const navigate = useNavigate()
@@ -19,11 +21,11 @@ const Bottom = () => {
 
         window.onresize = () => {
             //如果输入框在页面下面的位置，键盘弹起后，会遮挡住要输入的区域，只有开始输入的时候才会滚动到输入的位置，用户体验非常不好。
-            if (document.activeElement.tagName == "INPUT" || document.activeElement.tagName == "TEXTAREA") {
+            /*if (document.activeElement.tagName == "INPUT" || document.activeElement.tagName == "TEXTAREA") {
                 window.setTimeout(function () {
                     document.activeElement.scrollIntoViewIfNeeded();
                 }, 0);
-            }
+            }*/
 
             return (() => {
                 //页面高度变化后, 设置showHeight的值
@@ -46,21 +48,23 @@ const Bottom = () => {
             key: '/item-list',
             title: '首页',
             // icon: <AppOutline />,
+            icon: <Icon name='shouye' />
         },
         {
-            key: '/todo',
-            title: '我的待办',
-            // icon: <UnorderedListOutline />,
+            key: '/item-add',
+            title: '添加物品',
+            icon: <Icon name='jia'/>
         },
-        {
+        /*{
             key: '/message',
             title: '我的消息',
             // icon: <MessageOutline />,
-        },
+        },*/
         {
             key: '/me',
             title: '个人中心',
             // icon: <UserOutline />,
+            icon: <Icon name='wode'/>
         },
     ]
 
@@ -72,7 +76,7 @@ const Bottom = () => {
     return (
         <TabBar activeKey={pathname} onChange={value => setRouteActive(value)}>
             {tabs.map(item => (
-                <TabBar.Item key={item.key} /*icon={item.icon}*/ title={item.title}/>
+                <TabBar.Item key={item.key} icon={item.icon} title={item.title}/>
             ))}
         </TabBar>
     )

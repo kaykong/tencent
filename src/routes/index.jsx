@@ -5,6 +5,7 @@ import ItemList from "../pages/itemList/ItemList";
 import Bottom from "../components/bottom/Bottom";
 import style from './index.scss'
 import MyTest from "../pages/myTest";
+import ItemAdd from "../pages/itemAdd/itemAdd";
 
 
 
@@ -20,6 +21,7 @@ class Routers extends React.Component {
                             <Route path="/item-list" element={<ItemList/>}/>
                             <Route path="/test" element={<MyTest/>}/>
                             <Route path="/me" element={<MyTest/>}/>
+                            <Route path="/item-add" element={<ItemAdd/>}/>
                             {/* <Route path="/index" Component={} /> */}
                         </Routes>
                     </div>
