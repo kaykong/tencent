@@ -1,0 +1,19 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f7fa;
+}
+
+
+.body {
+  flex: 1;
+  overflow: auto;
+}
+
+.bottom {
+  //flex: 0 0 100px;
+
+  //height: 100px;
+  border-top: solid 1px var(--adm-border-color);
+}

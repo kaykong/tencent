@@ -20,6 +20,33 @@ const ItemList = (props) => {
                     <List.Item prefix={<Icon name='Thermometer'/>} description='床头柜左2' onClick={() => {}}>
                         温度计
                     </List.Item>
+                    <List.Item prefix={<Icon name='notebook'/>} description='电视柜左2' onClick={() => {}}>
+                        一本书
+                    </List.Item>
+                    <List.Item prefix={<Icon name='camera'/>} description='电视柜右1' onClick={() => {}}>
+                        相机
+                    </List.Item>
+                    <List.Item prefix={<Icon name='Thermometer'/>} description='床头柜左2' onClick={() => {}}>
+                        温度计
+                    </List.Item>
+                    <List.Item prefix={<Icon name='notebook'/>} description='电视柜左2' onClick={() => {}}>
+                        一本书
+                    </List.Item>
+                    <List.Item prefix={<Icon name='camera'/>} description='电视柜右1' onClick={() => {}}>
+                        相机
+                    </List.Item>
+                    <List.Item prefix={<Icon name='Thermometer'/>} description='床头柜左2' onClick={() => {}}>
+                        温度计
+                    </List.Item>
+                    <List.Item prefix={<Icon name='notebook'/>} description='电视柜左2' onClick={() => {}}>
+                        一本书
+                    </List.Item>
+                    <List.Item prefix={<Icon name='camera'/>} description='电视柜右1' onClick={() => {}}>
+                        相机
+                    </List.Item>
+                    <List.Item prefix={<Icon name='Thermometer'/>} description='床头柜左2' onClick={() => {}}>
+                        温度计
+                    </List.Item>
                 </List>
 
             </div>

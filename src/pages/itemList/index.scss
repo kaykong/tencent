@@ -1,18 +1,26 @@
 $inputWrapperHeight: 120px;
 
 .item-list-wrapper {
-  height: 100vh;
+  //height: 100vh;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
   background: #f5f7fa;
+  //overflow: auto;
 
   .search-input-wrapper {
-    width: 600px;
+    /*position: fixed;
+    top: 0px;*/
+    width: 100%;
     height: $inputWrapperHeight;
-    margin-left: auto;
-    margin-right: auto;
-    //background: aquamarine;
-    overflow:hidden;
+
+    background: #f5f7fa;
+    //overflow:hidden;
 
     .search-input {
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
       margin-top: ($inputWrapperHeight - 80px) / 2;
       //margin-top: 20px;
       --height: 80px;
@@ -27,16 +35,17 @@ $inputWrapperHeight: 120px;
     .adm-search-bar .adm-search-bar-input-box .adm-search-bar-input-box-icon {
       font-size: 38px;
       line-height: 38px;
-      margin-top: 4px;
     }
   }
 
   .list-wrapper {
+    flex: 1;
+    overflow: auto;
     //background: #7d4fa7;
-    position: absolute;
+    //position: fixed;
     width: 100%;
-    top: $inputWrapperHeight;
-    bottom: 0;
+    //top: $inputWrapperHeight +　120px;
+    //bottom: 300px;
 
     .adm-list-item-description {
       margin-top: 10px;
