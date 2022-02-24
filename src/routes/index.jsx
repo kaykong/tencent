@@ -6,6 +6,7 @@ import Bottom from "../components/bottom/Bottom";
 import style from './index.scss'
 import MyTest from "../pages/myTest";
 import ItemAdd from "../pages/itemAdd/itemAdd";
+import {Me} from "../pages/me/me";
 
 
 
@@ -20,7 +21,7 @@ class Routers extends React.Component {
                             <Route exact path="/" element={<Navigate to="/item-list"/>}/>
                             <Route path="/item-list" element={<ItemList/>}/>
                             <Route path="/test" element={<MyTest/>}/>
-                            <Route path="/me" element={<MyTest/>}/>
+                            <Route path="/me" element={<Me/>}/>
                             <Route path="/item-add" element={<ItemAdd/>}/>
                             {/* <Route path="/index" Component={} /> */}
                         </Routes>
