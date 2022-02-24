@@ -7,7 +7,7 @@ import './assets/iconfont'
  */
 
 export const Icon = (props) => {
-    console.log(props)
+    // console.log(props)
 
     return (
         <div>

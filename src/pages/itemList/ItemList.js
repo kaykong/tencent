@@ -1,8 +1,26 @@
 import './index.scss'
 import {List, SearchBar} from "antd-mobile";
 import {Icon} from "../../components/icon/icon";
+import {useEffect} from "react";
+import {fetchGet} from "../../utils/fetch";
+
 
 const ItemList = (props) => {
+
+    useEffect(() => {
+        console.log(1)
+        // fetchGet('/release/mongoDB?methodName=getMessageByPage&pageNum=1&limitNum=20')
+        getList()
+        console.log(2)
+    }, [])
+
+    const getList = async () => {
+        // let response = await fetchGet('/release/mongoDB?methodName=getMessageByPage&pageNum=1&limitNum=20')
+        let response = await fetchGet('/release/mongoDB?methodName=itemList_checkUser&password=188002095220&phone=18800209520')
+        console.log(3)
+        console.log(response)
+        return response
+    }
 
     return (
         <div className='item-list-wrapper'>
