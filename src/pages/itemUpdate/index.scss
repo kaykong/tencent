@@ -1,0 +1,21 @@
+.item-update {
+  padding: 20px;
+  margin-top: 100px;
+  .item {
+    border-bottom: 1px solid var(--adm-border-color);
+    margin-bottom: 20px;
+
+    .item-label {
+      font-size: 30px;
+      color: #666;
+    }
+  }
+
+  .btn-div {
+    margin-top: 40px;
+  }
+  button {
+    width: 200px;
+    margin-left: 20px;
+  }
+}

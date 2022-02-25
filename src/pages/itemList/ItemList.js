@@ -1,9 +1,10 @@
 import './index.scss'
-import {DotLoading, InfiniteScroll, List, PullToRefresh, SearchBar, Toast} from "antd-mobile";
+import {DotLoading, InfiniteScroll, List, Popup, PullToRefresh, SearchBar, Toast} from "antd-mobile";
 import {Icon} from "../../components/icon/icon";
 import {useEffect, useState} from "react";
 import {fetchGet} from "../../utils/fetch";
 import {getUserIdFromLocalStorage} from "../../utils/userInfoUtils";
+import {ItemUpdate} from "../itemUpdate/itemUpdate";
 
 
 const ItemList = (props) => {
@@ -12,8 +13,10 @@ const ItemList = (props) => {
     const [searchInputValue, setSearchInputValue] = useState('')
     const [hasMore, setHasMore] = useState(true)
     const [loadingList, setLoadingList] = useState(false)
+    const [popupVisible, setPopupVisible] = useState(false)
     const [currentPage, setCurrentPage] = useState(0)
     const [userId, setUserId] = useState(null)
+    const [clickItem, setClickItem] = useState({})
 
     useEffect(() => {
         console.log(1)
@@ -132,6 +135,8 @@ const ItemList = (props) => {
                                                       key={item._id}
                                                       extra={item.count}
                                                       onClick={() => {
+                                                          setPopupVisible(true)
+                                                          setClickItem(item)
                                                       }}>
                                         {item.name}
                                     </List.Item>
@@ -139,6 +144,16 @@ const ItemList = (props) => {
                             </PullToRefresh>
                         </List>
                         <InfiniteScroll loadMore={loadMore} hasMore={hasMore} threshold={50}></InfiniteScroll>
+                        <Popup
+                            visible={popupVisible}
+                            onMaskClick={() => {
+                                setPopupVisible(false)
+                            }}
+                            position='right'
+                            bodyStyle={{ minWidth: '70vw' }}
+                        >
+                            <ItemUpdate {...clickItem}></ItemUpdate>
+                        </Popup>
                     </div>
                     : <div></div>
                 }
