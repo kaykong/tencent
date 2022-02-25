@@ -7,6 +7,7 @@ import {fetchGet} from "../../utils/fetch";
 export const ItemUpdate = (props) => {
 
     const [deleteLoading, setDeleteLoading] = useState(false)
+    const [updateLoading, setUpdateLoading] = useState(false)
     const [loading, setLoading] = useState(false)
     const [name, setName] = useState(props.name)
     const [position, setPosition] = useState(props.position)
@@ -24,8 +25,76 @@ export const ItemUpdate = (props) => {
 
 
 
-    const onFinish = () => {
+    const updateItem = async () => {
 
+        if (!name) {
+            Toast.show({
+                content: '请输入物品名称',
+                position: 'bottom',
+            })
+            return
+        }
+
+        if (!position) {
+            Toast.show({
+                content: '请输入存储位置',
+                position: 'bottom',
+            })
+            return
+        }
+
+        if (!category) {
+            Toast.show({
+                content: '请输入物品分类',
+                position: 'bottom',
+            })
+            return
+        }
+
+        if (!count) {
+            Toast.show({
+                content: '请输入物品数量',
+                position: 'bottom',
+            })
+            return
+        }
+
+        setUpdateLoading(true)
+        let values = {
+            _id: itemId,
+            name,
+            position,
+            category,
+            count,
+            update_time: Date.now()
+        }
+        console.log('deleteItem', values)
+        let response = await fetchGet('/release/mongoDB?methodName=itemList_update',
+            {
+                params: values
+            })
+        setUpdateLoading(false)
+        if (response.status === 110) {
+            console.log(response)
+            Toast.show({
+                content: response.statusText,
+                position: 'bottom',
+            })
+            return
+        }
+
+        if (response.body && response.body.update) {
+            Toast.show({
+                content: '更新成功',
+                position: 'bottom',
+            })
+            // window.location.href = '/';
+        } else {
+            Toast.show({
+                content: response.statusText,
+                position: 'bottom',
+            })
+        }
     }
 
     const deleteItem = async () => {
@@ -188,7 +257,7 @@ export const ItemUpdate = (props) => {
                 <div className='btn-div'>
                     <Space>
                         <Button color='danger' onClick={deleteItem} loading={deleteLoading}>删除</Button>
-                        <Button color='primary'>修改</Button>
+                        <Button color='primary' onClick={updateItem} loading={updateLoading}>修改</Button>
                     </Space>
                 </div>
 
