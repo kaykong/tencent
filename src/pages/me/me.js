@@ -58,7 +58,7 @@ export const Me = (props) => {
                 position: 'bottom',
             })
         }
-        Toast.show(JSON.stringify(response))
+        // Toast.show(JSON.stringify(response))
         console.log('onFinish', response)
     }
 

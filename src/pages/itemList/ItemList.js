@@ -13,9 +13,11 @@ const ItemList = (props) => {
     const [hasMore, setHasMore] = useState(true)
     const [loadingList, setLoadingList] = useState(false)
     const [currentPage, setCurrentPage] = useState(0)
+    const [userId, setUserId] = useState(null)
 
     useEffect(() => {
         console.log(1)
+        setUserId(getUserIdFromLocalStorage())
         // fetchGet('/release/mongoDB?methodName=getMessageByPage&pageNum=1&limitNum=20')
         search()
         console.log(2)
@@ -26,6 +28,9 @@ const ItemList = (props) => {
         setSearchInputValue(searchInput)
         // let response = await fetchGet('/release/mongoDB?methodName=getMessageByPage&pageNum=1&limitNum=20')
         let userId = getUserIdFromLocalStorage()
+        if (!userId) {
+            return
+        }
         setLoadingList(true)
         let url = `/release/mongoDB?methodName=itemList_getItemListByPage&userId=${userId}&pageNum=${0}&limitNum=${10}`
         if (searchInput && searchInput.trim()) {
@@ -115,6 +120,7 @@ const ItemList = (props) => {
                 />
                 {loadingList ? <div className='search-loading'><DotLoading color='primary'/></div> : ''}
             </div>
+            {userId ?
             <div className="list-wrapper">
 
                 {itemList && itemList.length > 0 ?
@@ -187,7 +193,7 @@ const ItemList = (props) => {
                     </List.Item>*/}
 
 
-            </div>
+            </div> : '' }
         </div>
     )
 
