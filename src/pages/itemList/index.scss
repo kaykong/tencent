@@ -28,6 +28,14 @@ $inputWrapperHeight: 120px;
       --background: #fff;
     }
 
+    .search-loading {
+      width: 100px;
+      height: 60px;
+      position: fixed;
+      top: 45px;
+      right: 55px;
+    }
+
     .adm-search-bar .adm-search-bar-input-box .adm-search-bar-input .adm-input-element {
       font-size: 32px;
       line-height: 32px;
@@ -44,8 +52,20 @@ $inputWrapperHeight: 120px;
     //background: #7d4fa7;
     //position: fixed;
     width: 100%;
+
+    a {
+      color: #333 !important
+    }
     //top: $inputWrapperHeight +　120px;
     //bottom: 300px;
+
+    .item-category {
+      display: inline-block;
+      margin-left: 20px;
+      padding: 2px 4px;
+      background: #1677ff;
+      color: #fff;
+    }
 
     .adm-list-item-description {
       margin-top: 10px;

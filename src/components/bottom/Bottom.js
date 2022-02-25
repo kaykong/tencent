@@ -56,6 +56,11 @@ const Bottom = () => {
             icon: <Icon name='jia'/>
         },
         /*{
+            key: '/item-add2',
+            title: '添加物品2',
+            icon: <Icon name='jia'/>
+        },*/
+        /*{
             key: '/message',
             title: '我的消息',
             // icon: <MessageOutline />,

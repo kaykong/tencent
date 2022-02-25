@@ -7,6 +7,7 @@ import style from './index.scss'
 import MyTest from "../pages/myTest";
 import ItemAdd from "../pages/itemAdd/itemAdd";
 import {Me} from "../pages/me/me";
+import ItemAdd2 from "../pages/itemAdd/itemAdd2";
 
 
 
@@ -23,6 +24,7 @@ class Routers extends React.Component {
                             <Route path="/test" element={<MyTest/>}/>
                             <Route path="/me" element={<Me/>}/>
                             <Route path="/item-add" element={<ItemAdd/>}/>
+                            <Route path="/item-add2" element={<ItemAdd2/>}/>
                             {/* <Route path="/index" Component={} /> */}
                         </Routes>
                     </div>
